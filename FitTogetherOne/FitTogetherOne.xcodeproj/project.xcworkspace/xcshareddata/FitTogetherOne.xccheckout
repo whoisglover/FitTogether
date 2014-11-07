@@ -12,22 +12,34 @@
 	<dict>
 		<key>284525C7F2CDBECBD7C353A4DCA7587954C136AB</key>
 		<string>https://github.com/whoisglover/mobileAppDev</string>
+		<key>FBF7D865D7300F963027FC2532449277198FE612</key>
+		<string>https://github.com/whoisglover/FitTogether.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FitTogetherOne/FitTogetherOne.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>284525C7F2CDBECBD7C353A4DCA7587954C136AB</key>
+		<string>../../../../mobileAppDev</string>
+		<key>FBF7D865D7300F963027FC2532449277198FE612</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/whoisglover/mobileAppDev</string>
+	<string>https://github.com/whoisglover/FitTogether.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>284525C7F2CDBECBD7C353A4DCA7587954C136AB</string>
+	<string>FBF7D865D7300F963027FC2532449277198FE612</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FBF7D865D7300F963027FC2532449277198FE612</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FitTogether</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

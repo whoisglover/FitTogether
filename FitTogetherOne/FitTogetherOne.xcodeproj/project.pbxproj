@@ -63,8 +63,8 @@
 		26A713461A0C6FD30061A751 = {
 			isa = PBXGroup;
 			children = (
-				26A713751A0C71460061A751 /* CloudKit.framework */,
 				26A713511A0C6FD40061A751 /* FitTogetherOne */,
+				26A713751A0C71460061A751 /* CloudKit.framework */,
 				26A713671A0C6FD40061A751 /* FitTogetherOneTests */,
 				26A713501A0C6FD40061A751 /* Products */,
 			);
@@ -82,12 +82,12 @@
 		26A713511A0C6FD40061A751 /* FitTogetherOne */ = {
 			isa = PBXGroup;
 			children = (
-				26A713741A0C71440061A751 /* FitTogetherOne.entitlements */,
+				26A713581A0C6FD40061A751 /* Main.storyboard */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				26A713561A0C6FD40061A751 /* ViewController.swift */,
-				26A713581A0C6FD40061A751 /* Main.storyboard */,
 				26A7135B1A0C6FD40061A751 /* Images.xcassets */,
 				26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */,
+				26A713741A0C71440061A751 /* FitTogetherOne.entitlements */,
 				26A713521A0C6FD40061A751 /* Supporting Files */,
 			);
 			path = FitTogetherOne;
@@ -425,6 +425,7 @@
 				26A713701A0C6FD40061A751 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26A713711A0C6FD40061A751 /* Build configuration list for PBXNativeTarget "FitTogetherOneTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				26A713731A0C6FD40061A751 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
