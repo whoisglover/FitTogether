@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		26A713551A0C6FD40061A751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713541A0C6FD40061A751 /* AppDelegate.swift */; };
 		26A713571A0C6FD40061A751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713561A0C6FD40061A751 /* ViewController.swift */; };
 		26A7135A1A0C6FD40061A751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A713581A0C6FD40061A751 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		262EB7091A1AE6C800C4602D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTogetherOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713531A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A713541A0C6FD40061A751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */,
+				262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		26A713461A0C6FD30061A751 = {
 			isa = PBXGroup;
 			children = (
+				262EB7091A1AE6C800C4602D /* HealthKit.framework */,
 				26A713751A0C71460061A751 /* CloudKit.framework */,
 				26A713511A0C6FD40061A751 /* FitTogetherOne */,
 				26A713671A0C6FD40061A751 /* FitTogetherOneTests */,
@@ -169,6 +173,9 @@
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 4FNJNUQ3AD;
 						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
