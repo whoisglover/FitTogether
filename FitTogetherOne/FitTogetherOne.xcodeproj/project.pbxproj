@@ -425,6 +425,7 @@
 				26A713701A0C6FD40061A751 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26A713711A0C6FD40061A751 /* Build configuration list for PBXNativeTarget "FitTogetherOneTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				26A713731A0C6FD40061A751 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
