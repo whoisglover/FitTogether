@@ -7,7 +7,7 @@
         <!--Dashboard-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DashboardViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-2" y="2060"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Root Navigation View Controller-->
         <scene sceneID="bEA-dt-XbB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTd-0i-2rt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTd-0i-2rt" customClass="RootNavigationViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kVm-q6-JlQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="776" y="488"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root Tab Bar View Controller-->
         <scene sceneID="3lJ-e1-e9A">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Z9E-Gb-1nz" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Z9E-Gb-1nz" customClass="RootTabBarViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Utj-cP-5N5"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -67,7 +67,7 @@
         <!--Team-->
         <scene sceneID="V44-3R-lbS">
             <objects>
-                <viewController id="5hd-FF-B5K" sceneMemberID="viewController">
+                <viewController id="5hd-FF-B5K" customClass="TeamViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BGT-4h-u4W"/>
                         <viewControllerLayoutGuide type="bottom" id="9ft-uN-rnp"/>
@@ -86,7 +86,7 @@
         <!--Profile-->
         <scene sceneID="zx2-G9-ylG">
             <objects>
-                <viewController id="RtC-Tf-FRr" sceneMemberID="viewController">
+                <viewController id="RtC-Tf-FRr" customClass="ProfileViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F4V-Xu-zAN"/>
                         <viewControllerLayoutGuide type="bottom" id="SD8-vs-uDR"/>
