@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTd-0i-2rt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTd-0i-2rt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Dashboard-->
@@ -67,21 +68,76 @@
         <!--Team-->
         <scene sceneID="V44-3R-lbS">
             <objects>
-                <viewController id="5hd-FF-B5K" sceneMemberID="viewController">
+                <viewController title="Team" id="5hd-FF-B5K" customClass="TeamViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BGT-4h-u4W"/>
                         <viewControllerLayoutGuide type="bottom" id="9ft-uN-rnp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="B30-XU-r8r">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQz-cO-N4L">
+                                <rect key="frame" x="0.0" y="80" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zR1-L1-yUM">
+                                <rect key="frame" x="155" y="110" width="260" height="29"/>
+                                <segments>
+                                    <segment title="A to Z"/>
+                                    <segment title="Most Steps"/>
+                                    <segment title="Least Steps"/>
+                                </segments>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-HG-cCW">
+                                <rect key="frame" x="0.0" y="148" width="600" height="403"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" id="gxJ-9f-kbr">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gxJ-9f-kbr" id="k4U-eD-uc0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teammate" id="Iej-48-hBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iej-48-hBD" id="PS9-pb-B2I">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5hd-FF-B5K" id="Uue-1L-lRd"/>
+                                    <outlet property="delegate" destination="5hd-FF-B5K" id="xT9-Sp-Tdq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" label="Team">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FLk-HG-cCW" secondAttribute="trailing" id="14R-2f-YAu"/>
+                            <constraint firstAttribute="centerX" secondItem="zR1-L1-yUM" secondAttribute="centerX" constant="15" id="2dl-VB-KUQ"/>
+                            <constraint firstItem="9ft-uN-rnp" firstAttribute="top" secondItem="FLk-HG-cCW" secondAttribute="bottom" id="QdA-kI-SD4"/>
+                            <constraint firstItem="TQz-cO-N4L" firstAttribute="leading" secondItem="B30-XU-r8r" secondAttribute="leading" id="XsO-d4-4vk"/>
+                            <constraint firstItem="zR1-L1-yUM" firstAttribute="top" secondItem="B30-XU-r8r" secondAttribute="topMargin" constant="110" id="jwq-vS-NoM"/>
+                            <constraint firstItem="TQz-cO-N4L" firstAttribute="top" secondItem="B30-XU-r8r" secondAttribute="topMargin" constant="80" id="ppR-qV-jfk"/>
+                            <constraint firstAttribute="trailing" secondItem="TQz-cO-N4L" secondAttribute="trailing" id="qha-I4-e0s"/>
+                            <constraint firstItem="FLk-HG-cCW" firstAttribute="leading" secondItem="B30-XU-r8r" secondAttribute="leading" id="u84-Dz-v5d"/>
+                            <constraint firstItem="FLk-HG-cCW" firstAttribute="top" secondItem="zR1-L1-yUM" secondAttribute="bottom" constant="10" id="zvR-CS-AJD"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Team" id="jQS-3V-vS8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVE-Y3-Z2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776" y="2060"/>
+            <point key="canvasLocation" x="768" y="2249"/>
         </scene>
         <!--Profile-->
         <scene sceneID="zx2-G9-ylG">

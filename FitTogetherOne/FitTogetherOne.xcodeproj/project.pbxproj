@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		26A713551A0C6FD40061A751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713541A0C6FD40061A751 /* AppDelegate.swift */; };
-		26A713571A0C6FD40061A751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713561A0C6FD40061A751 /* ViewController.swift */; };
 		26A7135A1A0C6FD40061A751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A713581A0C6FD40061A751 /* Main.storyboard */; };
 		26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135B1A0C6FD40061A751 /* Images.xcassets */; };
 		26A7135F1A0C6FD40061A751 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */; };
 		26A7136B1A0C6FD40061A751 /* FitTogetherOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A7136A1A0C6FD40061A751 /* FitTogetherOneTests.swift */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
+		B0DDDBA41A229B180070F8E5 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DDDBA31A229B180070F8E5 /* TeamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,6 @@
 		26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTogetherOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713531A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A713541A0C6FD40061A751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26A713561A0C6FD40061A751 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		26A713591A0C6FD40061A751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26A7135B1A0C6FD40061A751 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26A7135E1A0C6FD40061A751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		26A7136A1A0C6FD40061A751 /* FitTogetherOneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitTogetherOneTests.swift; sourceTree = "<group>"; };
 		26A713741A0C71440061A751 /* FitTogetherOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FitTogetherOne.entitlements; sourceTree = "<group>"; };
 		26A713751A0C71460061A751 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		B0DDDBA31A229B180070F8E5 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				26A713741A0C71440061A751 /* FitTogetherOne.entitlements */,
+				B0DDDBA31A229B180070F8E5 /* TeamViewController.swift */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
-				26A713561A0C6FD40061A751 /* ViewController.swift */,
 				26A713581A0C6FD40061A751 /* Main.storyboard */,
 				26A7135B1A0C6FD40061A751 /* Images.xcassets */,
 				26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */,
@@ -231,7 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A713571A0C6FD40061A751 /* ViewController.swift in Sources */,
+				B0DDDBA41A229B180070F8E5 /* TeamViewController.swift in Sources */,
 				26A713551A0C6FD40061A751 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
