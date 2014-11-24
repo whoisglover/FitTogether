@@ -1,5 +1,5 @@
 //
-//  TeamViewController.swift
+//  TeammateViewController.swift
 //  FitTogetherOne
 //
 //  Created by Alex Berger on 11/23/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class TeammateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +31,5 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("teammate", forIndexPath:indexPath) as UITableViewCell
-        var steps = "10000"
-        cell.textLabel.text = "Name         " + steps
-        
-        return cell
-    }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
-    }
-    
+
 }
