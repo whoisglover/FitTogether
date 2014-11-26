@@ -12,7 +12,9 @@ class ProfileViewController: UITableViewController {
     
 //    this view controller will need to implement a Collection View under the badges section
 //    in order to display the badges images and/or names. this view will replicate the
-//    default photos gallery.
+//    default photos gallery. 
+    
+//    to view badges section in IB, change the window base values in IB to w: Any & h: Regular
     
 
 // MARK: DEBUG CODE
