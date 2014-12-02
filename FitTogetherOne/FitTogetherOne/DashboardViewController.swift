@@ -21,6 +21,19 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+//  MARK: PRESENT SETTINGS
+    
+    @IBAction func presentSettings(sender: AnyObject) {
+        
+        
+        
+        
+        
+    }
+    
+    
+    
 
     /*
     // MARK: - Navigation
