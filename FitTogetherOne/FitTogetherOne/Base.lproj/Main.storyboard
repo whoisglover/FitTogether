@@ -134,7 +134,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Muy-C5-3fL" id="b2D-h6-oDz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Affiliation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-ac-TKe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Team Affiliation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-ac-TKe">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -148,30 +148,7 @@
                                                 <constraint firstAttribute="centerX" secondItem="bHq-ac-TKe" secondAttribute="centerX" id="e5G-tj-DDI"/>
                                                 <constraint firstAttribute="centerX" secondItem="bHq-ac-TKe" secondAttribute="centerX" id="zj3-id-ue2"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="bHq-ac-TKe"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="0A7-Md-4r9"/>
-                                                    <exclude reference="Eic-Jk-BEh"/>
-                                                    <exclude reference="K5d-25-5rh"/>
-                                                    <exclude reference="e5G-tj-DDI"/>
-                                                    <exclude reference="zj3-id-ue2"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular">
-                                                <mask key="subviews">
-                                                    <include reference="bHq-ac-TKe"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="0A7-Md-4r9"/>
-                                                    <include reference="Eic-Jk-BEh"/>
-                                                    <exclude reference="K5d-25-5rh"/>
-                                                    <include reference="e5G-tj-DDI"/>
-                                                    <exclude reference="zj3-id-ue2"/>
-                                                </mask>
-                                            </variation>
+                                            <variation key="heightClass=regular"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -184,13 +161,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#######" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGb-DS-2M8">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="12" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzR-hq-Dc1">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="12" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -204,34 +181,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="cGb-DS-2M8" secondAttribute="centerY" id="q7m-1I-GeZ"/>
                                                 <constraint firstAttribute="centerY" secondItem="JzR-hq-Dc1" secondAttribute="centerY" id="qSs-Or-ts3"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="cGb-DS-2M8"/>
-                                                    <exclude reference="JzR-hq-Dc1"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="iMe-99-SZ6"/>
-                                                    <exclude reference="qSs-Or-ts3"/>
-                                                    <exclude reference="1RS-vH-fur"/>
-                                                    <exclude reference="5zj-7E-k5U"/>
-                                                    <exclude reference="hia-75-jRs"/>
-                                                    <exclude reference="q7m-1I-GeZ"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular">
-                                                <mask key="subviews">
-                                                    <include reference="cGb-DS-2M8"/>
-                                                    <include reference="JzR-hq-Dc1"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="iMe-99-SZ6"/>
-                                                    <include reference="qSs-Or-ts3"/>
-                                                    <include reference="1RS-vH-fur"/>
-                                                    <exclude reference="5zj-7E-k5U"/>
-                                                    <exclude reference="hia-75-jRs"/>
-                                                    <include reference="q7m-1I-GeZ"/>
-                                                </mask>
-                                            </variation>
+                                            <variation key="heightClass=regular"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
