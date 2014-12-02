@@ -23,9 +23,6 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var teamTableView: UITableView!
 
 
-class TeamViewController: UIViewController {
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,7 +86,7 @@ class TeamViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Teammates Steps Today"
+        return "Steps Today"
     }
     
 //    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

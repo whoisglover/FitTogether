@@ -2,9 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTd-0i-2rt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -72,8 +69,6 @@
         <scene sceneID="V44-3R-lbS">
             <objects>
                 <viewController title="Team" id="5hd-FF-B5K" customClass="TeamViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
-                
-
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BGT-4h-u4W"/>
                         <viewControllerLayoutGuide type="bottom" id="9ft-uN-rnp"/>
@@ -243,8 +238,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Muy-C5-3fL" id="b2D-h6-oDz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Team Affiliation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-ac-TKe">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Affiliation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-ac-TKe">
+                                                    <rect key="frame" x="242" y="12" width="116" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -254,10 +249,20 @@
                                                 <constraint firstAttribute="centerY" secondItem="bHq-ac-TKe" secondAttribute="centerY" id="0A7-Md-4r9"/>
                                                 <constraint firstAttribute="centerY" secondItem="bHq-ac-TKe" secondAttribute="centerY" id="Eic-Jk-BEh"/>
                                                 <constraint firstItem="bHq-ac-TKe" firstAttribute="trailing" secondItem="b2D-h6-oDz" secondAttribute="trailingMargin" id="K5d-25-5rh"/>
+                                                <constraint firstAttribute="centerY" secondItem="bHq-ac-TKe" secondAttribute="centerY" id="QfU-sb-9fe"/>
+                                                <constraint firstAttribute="centerX" secondItem="bHq-ac-TKe" secondAttribute="centerX" id="UFI-3t-cN5"/>
                                                 <constraint firstAttribute="centerX" secondItem="bHq-ac-TKe" secondAttribute="centerX" id="e5G-tj-DDI"/>
                                                 <constraint firstAttribute="centerX" secondItem="bHq-ac-TKe" secondAttribute="centerX" id="zj3-id-ue2"/>
                                             </constraints>
-                                            <variation key="heightClass=regular"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="0A7-Md-4r9"/>
+                                                    <exclude reference="Eic-Jk-BEh"/>
+                                                    <exclude reference="K5d-25-5rh"/>
+                                                    <exclude reference="e5G-tj-DDI"/>
+                                                    <exclude reference="zj3-id-ue2"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -270,7 +275,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#######" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGb-DS-2M8">
-                                                    <rect key="frame" x="8" y="12" width="584" height="21"/>
+                                                    <rect key="frame" x="267" y="12" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -285,12 +290,26 @@
                                             <constraints>
                                                 <constraint firstItem="cGb-DS-2M8" firstAttribute="trailing" secondItem="8SF-7e-aFu" secondAttribute="trailingMargin" id="1RS-vH-fur"/>
                                                 <constraint firstAttribute="centerX" secondItem="cGb-DS-2M8" secondAttribute="centerX" id="5zj-7E-k5U"/>
+                                                <constraint firstAttribute="centerX" secondItem="cGb-DS-2M8" secondAttribute="centerX" id="cW9-dZ-a8Y"/>
+                                                <constraint firstAttribute="centerY" secondItem="cGb-DS-2M8" secondAttribute="centerY" id="coE-ci-koJ"/>
                                                 <constraint firstAttribute="centerY" secondItem="cGb-DS-2M8" secondAttribute="centerY" id="hia-75-jRs"/>
                                                 <constraint firstItem="JzR-hq-Dc1" firstAttribute="leading" secondItem="8SF-7e-aFu" secondAttribute="leadingMargin" id="iMe-99-SZ6"/>
                                                 <constraint firstAttribute="centerY" secondItem="cGb-DS-2M8" secondAttribute="centerY" id="q7m-1I-GeZ"/>
                                                 <constraint firstAttribute="centerY" secondItem="JzR-hq-Dc1" secondAttribute="centerY" id="qSs-Or-ts3"/>
                                             </constraints>
-                                            <variation key="heightClass=regular"/>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="JzR-hq-Dc1"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="iMe-99-SZ6"/>
+                                                    <exclude reference="qSs-Or-ts3"/>
+                                                    <exclude reference="1RS-vH-fur"/>
+                                                    <exclude reference="5zj-7E-k5U"/>
+                                                    <exclude reference="hia-75-jRs"/>
+                                                    <exclude reference="q7m-1I-GeZ"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
