@@ -54,13 +54,8 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("teammate", forIndexPath:indexPath) as TeammateTableViewCell
-    
-//        self.profilePicture.image = UIImage(named: "image.jpg")
-//        self.name.text = "Name"
-//        cell.textLabel.textAlignment = .Right
-//        self.steps.text = "10,000"
         
+        var cell = tableView.dequeueReusableCellWithIdentifier("teammate", forIndexPath:indexPath) as TeammateTableViewCell
         let cellData = team[indexPath.row]
         
         cell.name.text = cellData["name"] as? String
@@ -72,9 +67,6 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.profilePicture.layer.borderWidth = 1.0
         cell.profilePicture.layer.borderColor = UIColor(red: 0.882, green: 0.365, blue: 0.286, alpha: 1.0).CGColor
         cell.profilePicture.clipsToBounds = true
-        
-        
-        
         
         return cell
     }
@@ -89,7 +81,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Steps Today"
+        return "Teammates Steps Today"
     }
     
 //    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
