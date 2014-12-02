@@ -19,6 +19,7 @@
 		26A7135F1A0C6FD40061A751 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */; };
 		26A7136B1A0C6FD40061A751 /* FitTogetherOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A7136A1A0C6FD40061A751 /* FitTogetherOneTests.swift */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
+		26E3D9551A2E48EF00FDAB98 /* CloudKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E3D9541A2E48EF00FDAB98 /* CloudKitInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		26A7136A1A0C6FD40061A751 /* FitTogetherOneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitTogetherOneTests.swift; sourceTree = "<group>"; };
 		26A713741A0C71440061A751 /* FitTogetherOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FitTogetherOne.entitlements; sourceTree = "<group>"; };
 		26A713751A0C71460061A751 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		26E3D9541A2E48EF00FDAB98 /* CloudKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */,
 				26A713741A0C71440061A751 /* FitTogetherOne.entitlements */,
 				26A713521A0C6FD40061A751 /* Supporting Files */,
+				26E3D9541A2E48EF00FDAB98 /* CloudKitInterface.swift */,
 			);
 			path = FitTogetherOne;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				26A713551A0C6FD40061A751 /* AppDelegate.swift in Sources */,
 				039CDAE31A1EDA3200B05871 /* DashboardViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
+				26E3D9551A2E48EF00FDAB98 /* CloudKitInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
