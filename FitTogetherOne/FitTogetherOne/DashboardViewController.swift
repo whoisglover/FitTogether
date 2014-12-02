@@ -23,12 +23,11 @@ class DashboardViewController: UIViewController {
     
     
 //  MARK: PRESENT SETTINGS
-    
     @IBAction func presentSettings(sender: AnyObject) {
         
+        let settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("settings") as SettingsTableViewController
         
-        
-        
+        self.presentViewController(settingsViewController, animated: true, completion: nil)
         
     }
     
