@@ -9,11 +9,25 @@
 import UIKit
 
 class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
+// MARK: TABLE VIEW TEST DATA
+    let team : [Dictionary<String, AnyObject>] = [["image" : "default-profile.png", "name" : "Alex", "steps" : 12345], ["image" : "default-profile.png", "name" : "Josh", "steps" : 43566], ["image" : "default-profile.png", "name" : "Danny", "steps" : 25432], ["image" : "default-profile.png", "name" : "Jake", "steps" : 8345], ["image" : "default-profile.png", "name" : "Zack", "steps" : 8965], ["image" : "default-profile.png", "name" : "Jake", "steps" : 9865], ["image" : "default-profile.png", "name" : "Randy", "steps" : 6745], ["image" : "default-profile.png", "name" : "Alex", "steps" : 12345], ["image" : "default-profile.png", "name" : "Josh", "steps" : 43566], ["image" : "default-profile.png", "name" : "Danny", "steps" : 25432], ["image" : "default-profile.png", "name" : "Jake", "steps" : 8345], ["image" : "default-profile.png", "name" : "Zack", "steps" : 8965], ["image" : "default-profile.png", "name" : "Jake", "steps" : 9865], ["image" : "default-profile.png", "name" : "Randy", "steps" : 6745], ["image" : "default-profile.png", "name" : "Alex", "steps" : 12345], ["image" : "default-profile.png", "name" : "Josh", "steps" : 43566], ["image" : "default-profile.png", "name" : "Danny", "steps" : 25432], ["image" : "default-profile.png", "name" : "Jake", "steps" : 8345], ["image" : "default-profile.png", "name" : "Zack", "steps" : 8965], ["image" : "default-profile.png", "name" : "Jake", "steps" : 9865], ["image" : "default-profile.png", "name" : "Randy", "steps" : 6745]]
+    
+    
+    
+    
+    
+    @IBOutlet weak var teamName: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var teamTableView: UITableView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
+        
+        self.teamTableView.contentInset = UIEdgeInsetsMake(-25.0, 0.0, 0.0, 0.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,15 +45,54 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
+//    func segmentChanged(sender: UISegmentedControl){
+//        var color = UIColor(red: 240.0/255.0, green: 99.0/255.0, blue: 74.0/255.0, alpha: 1.0)
+//        var selectedIndex = segmentedControl.selectedSegmentIndex
+//       // var selectedSegmet = segmentedControl.
+//        var colorOfSegment: () = segmentedControl.backgroundColor = color
+//        
+//    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("teammate", forIndexPath:indexPath) as UITableViewCell
-        var steps = "10000"
-        cell.textLabel.text = "Name         " + steps
+        var cell = tableView.dequeueReusableCellWithIdentifier("teammate", forIndexPath:indexPath) as TeammateTableViewCell
+    
+//        self.profilePicture.image = UIImage(named: "image.jpg")
+//        self.name.text = "Name"
+//        cell.textLabel.textAlignment = .Right
+//        self.steps.text = "10,000"
+        
+        let cellData = team[indexPath.row]
+        
+        cell.name.text = cellData["name"] as? String
+        cell.stepsToday.text = (cellData["steps"] as NSNumber!).stringValue
+        cell.profilePicture.image = UIImage(named: cellData["image"] as String!)
+        
+        // make profile image round
+        cell.profilePicture.layer.cornerRadius = 20.0
+        cell.profilePicture.layer.borderWidth = 1.0
+        cell.profilePicture.layer.borderColor = UIColor(red: 0.882, green: 0.365, blue: 0.286, alpha: 1.0).CGColor
+        cell.profilePicture.clipsToBounds = true
+        
+        
+        
         
         return cell
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return team.count
     }
     
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Steps Today"
+    }
+    
+//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        tableView.headerViewForSection(section)
+//    }
 }
