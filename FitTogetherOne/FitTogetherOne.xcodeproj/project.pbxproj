@@ -13,23 +13,14 @@
 		039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE41A1EDA4500B05871 /* TeamViewController.swift */; };
 		03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA5951A2534D700309AD6 /* ProfileViewController.swift */; };
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
-		26A713551A0C6FD40061A751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713541A0C6FD40061A751 /* AppDelegate.swift */; };
-		26A7135A1A0C6FD40061A751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A713581A0C6FD40061A751 /* Main.storyboard */; };
 		26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135B1A0C6FD40061A751 /* Images.xcassets */; };
-		26A7135F1A0C6FD40061A751 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */; };
-		26A7136B1A0C6FD40061A751 /* FitTogetherOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A7136A1A0C6FD40061A751 /* FitTogetherOneTests.swift */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
+		B02560A01A2E474C0047E563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B025609C1A2E46440047E563 /* Main.storyboard */; };
+		B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B025609A1A2E46440047E563 /* LaunchScreen.xib */; };
+		B02560A21A2E48020047E563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713541A0C6FD40061A751 /* AppDelegate.swift */; };
+		B078C8B51A28CFB1004DDF22 /* default-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B078C8B41A28CFB1004DDF22 /* default-profile.png */; };
+		B0ED14901A2D67E500A972EC /* TeammateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		26A713651A0C6FD40061A751 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 26A713471A0C6FD30061A751 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 26A7134E1A0C6FD30061A751;
-			remoteInfo = FitTogetherOne;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
@@ -41,14 +32,15 @@
 		26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTogetherOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713531A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A713541A0C6FD40061A751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26A713591A0C6FD40061A751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26A7135B1A0C6FD40061A751 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		26A7135E1A0C6FD40061A751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		26A713641A0C6FD40061A751 /* FitTogetherOneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitTogetherOneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713691A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A7136A1A0C6FD40061A751 /* FitTogetherOneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitTogetherOneTests.swift; sourceTree = "<group>"; };
 		26A713741A0C71440061A751 /* FitTogetherOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FitTogetherOne.entitlements; sourceTree = "<group>"; };
 		26A713751A0C71460061A751 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		B025609B1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B025609D1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B078C8B41A28CFB1004DDF22 /* default-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-profile.png"; path = "../../../../../Downloads/default-profile.png"; sourceTree = "<group>"; };
+		B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +50,6 @@
 			files = (
 				26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */,
 				262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26A713611A0C6FD40061A751 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */,
-				26A713641A0C6FD40061A751 /* FitTogetherOneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,7 +78,10 @@
 		26A713511A0C6FD40061A751 /* FitTogetherOne */ = {
 			isa = PBXGroup;
 			children = (
-				26A713581A0C6FD40061A751 /* Main.storyboard */,
+				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
+				B025609C1A2E46440047E563 /* Main.storyboard */,
+				B078C8B41A28CFB1004DDF22 /* default-profile.png */,
+				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */,
 				039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */,
@@ -102,7 +89,6 @@
 				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,
 				03CBA5951A2534D700309AD6 /* ProfileViewController.swift */,
 				26A7135B1A0C6FD40061A751 /* Images.xcassets */,
-				26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */,
 				26A713741A0C71440061A751 /* FitTogetherOne.entitlements */,
 				26A713521A0C6FD40061A751 /* Supporting Files */,
 			);
@@ -154,24 +140,6 @@
 			productReference = 26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */;
 			productType = "com.apple.product-type.application";
 		};
-		26A713631A0C6FD40061A751 /* FitTogetherOneTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 26A713711A0C6FD40061A751 /* Build configuration list for PBXNativeTarget "FitTogetherOneTests" */;
-			buildPhases = (
-				26A713601A0C6FD40061A751 /* Sources */,
-				26A713611A0C6FD40061A751 /* Frameworks */,
-				26A713621A0C6FD40061A751 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				26A713661A0C6FD40061A751 /* PBXTargetDependency */,
-			);
-			name = FitTogetherOneTests;
-			productName = FitTogetherOneTests;
-			productReference = 26A713641A0C6FD40061A751 /* FitTogetherOneTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -193,10 +161,6 @@
 							};
 						};
 					};
-					26A713631A0C6FD40061A751 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 26A7134E1A0C6FD30061A751;
-					};
 				};
 			};
 			buildConfigurationList = 26A7134A1A0C6FD30061A751 /* Build configuration list for PBXProject "FitTogetherOne" */;
@@ -213,7 +177,6 @@
 			projectRoot = "";
 			targets = (
 				26A7134E1A0C6FD30061A751 /* FitTogetherOne */,
-				26A713631A0C6FD40061A751 /* FitTogetherOneTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,16 +186,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A7135A1A0C6FD40061A751 /* Main.storyboard in Resources */,
-				26A7135F1A0C6FD40061A751 /* LaunchScreen.xib in Resources */,
+				B078C8B51A28CFB1004DDF22 /* default-profile.png in Resources */,
 				26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26A713621A0C6FD40061A751 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */,
+				B02560A01A2E474C0047E563 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,48 +200,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02560A21A2E48020047E563 /* AppDelegate.swift in Sources */,
+				B0ED14901A2D67E500A972EC /* TeammateTableViewCell.swift in Sources */,
 				03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */,
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
-				26A713551A0C6FD40061A751 /* AppDelegate.swift in Sources */,
 				039CDAE31A1EDA3200B05871 /* DashboardViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		26A713601A0C6FD40061A751 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26A7136B1A0C6FD40061A751 /* FitTogetherOneTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		26A713661A0C6FD40061A751 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 26A7134E1A0C6FD30061A751 /* FitTogetherOne */;
-			targetProxy = 26A713651A0C6FD40061A751 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		26A713581A0C6FD40061A751 /* Main.storyboard */ = {
+		B025609A1A2E46440047E563 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26A713591A0C6FD40061A751 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		26A7135D1A0C6FD40061A751 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				26A7135E1A0C6FD40061A751 /* Base */,
+				B025609B1A2E46440047E563 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		B025609C1A2E46440047E563 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B025609D1A2E46440047E563 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -375,6 +317,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FitTogetherOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -389,43 +332,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FitTogetherOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		26A713721A0C6FD40061A751 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FitTogetherOneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitTogetherOne.app/FitTogetherOne";
-			};
-			name = Debug;
-		};
-		26A713731A0C6FD40061A751 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FitTogetherOneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitTogetherOne.app/FitTogetherOne";
 			};
 			name = Release;
 		};
@@ -446,15 +356,6 @@
 			buildConfigurations = (
 				26A7136F1A0C6FD40061A751 /* Debug */,
 				26A713701A0C6FD40061A751 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		26A713711A0C6FD40061A751 /* Build configuration list for PBXNativeTarget "FitTogetherOneTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				26A713721A0C6FD40061A751 /* Debug */,
-				26A713731A0C6FD40061A751 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
