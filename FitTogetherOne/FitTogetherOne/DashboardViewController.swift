@@ -24,13 +24,27 @@ class DashboardViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.dashboardTable.layoutMargins = UIEdgeInsetsMake(40.0, 0.0, 0.0, 0.0)
-        
-        
-        
-        
-        
+        // move section below navigation bar
+        self.dashboardTable.contentInset = UIEdgeInsetsMake(30.0, 0.0, 0.0, 0.0)
+
     }
+    
+//    // override function to set cell separators to the edge of the screen
+//    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        if(self.tableView.respondsToSelector(Selector("setSeparatorInset:"))){
+//            self.dashboardTable.separatorInset = UIEdgeInsetsZero
+//        }
+//        
+//        if(self.tableView.respondsToSelector(Selector("setLayoutMargins:"))){
+//            self.dashboardTable.layoutMargins = UIEdgeInsetsZero
+//        }
+//        
+//        if(cell.respondsToSelector(Selector("setLayoutMargins:"))){
+//            cell.layoutMargins = UIEdgeInsetsZero
+//        }
+//        
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
