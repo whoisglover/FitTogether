@@ -2,11 +2,12 @@
 //  TeamViewController.swift
 //  FitTogetherOne
 //
-//  Created by Alex Berger on 11/23/14.
+
 //  Copyright (c) 2014 Glover LLC. All rights reserved.
 //
 
 import UIKit
+
 
 class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -22,12 +23,18 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var teamTableView: UITableView!
 
 
+class TeamViewController: UIViewController {
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
         
         self.teamTableView.contentInset = UIEdgeInsetsMake(-25.0, 0.0, 0.0, 0.0)
+
+        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +52,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
+
 //    func segmentChanged(sender: UISegmentedControl){
 //        var color = UIColor(red: 240.0/255.0, green: 99.0/255.0, blue: 74.0/255.0, alpha: 1.0)
 //        var selectedIndex = segmentedControl.selectedSegmentIndex
@@ -87,4 +95,5 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        tableView.headerViewForSection(section)
 //    }
+
 }
