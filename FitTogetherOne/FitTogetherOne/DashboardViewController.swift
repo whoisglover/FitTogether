@@ -13,9 +13,9 @@ class DashboardViewController: UITableViewController {
 // MARK: PROPERTIES & OUTLETS
     @IBOutlet weak var dashboardTable: UITableView!
     @IBOutlet weak var walkedTodayMeterView: UIView!
-    
-    
-    
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,51 +24,51 @@ class DashboardViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+
         // move section below navigation bar
         self.dashboardTable.contentInset = UIEdgeInsetsMake(30.0, 0.0, 0.0, 0.0)
-        
+
         // set the walked today meter subview's height based on the screen width
         // so that the view is always square
         let screenSize : CGRect = UIScreen.mainScreen().bounds
         walkedTodayMeterView.frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.width)
-        
+
         walkedTodayMeterUpadate(6000, dailyGoal: 10000, screenSize: walkedTodayMeterView.frame)
-        
+
 
     }
-    
+
     func walkedTodayMeterUpadate(stepsToday: Int, dailyGoal: Int, screenSize: CGRect){
-        
+
         let meter = CAShapeLayer()
         let progress = CAShapeLayer()
-        
+
         // Customize the appearance of the shape layer
         meter.fillColor = UIColor.clearColor().CGColor
         meter.strokeColor = UIColor.grayColor().CGColor
         meter.lineWidth = 40.0
-        
+
         // Make a rect to draw our shape in
         let rect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.85)), (screenSize.width * 0.7), (screenSize.height * 0.7))
-        
+
         // Set the path for the shape layer
         meter.path = UIBezierPath(ovalInRect: rect).CGPath
-        
+
         // Add the shape layer as a sub layer of our view
         walkedTodayMeterView.layer.addSublayer(meter)
-        
+
         // Inner arc
         let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.0))
         let arcRadius : CGFloat = (rect.width / 2.0)
         let startAngle : CGFloat = CGFloat((3 * M_PI) / 2.0)
         let endAngle : CGFloat = CGFloat(M_PI)
-        
+
         progress.fillColor = UIColor.clearColor().CGColor
         progress.strokeColor = UIColor(red: 0.882, green: 0.353, blue: 0.302, alpha: 1.00).CGColor
         progress.lineWidth = meter.lineWidth
         progress.path = UIBezierPath(arcCenter: arcCenterPoint, radius: arcRadius, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
         walkedTodayMeterView.layer.addSublayer(progress)
-        
+
         // Animate the shape change
         let duration = NSNumber(float: 2.0)
         var newAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -78,9 +78,9 @@ class DashboardViewController: UITableViewController {
         newAnimation.delegate = self
         newAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         progress.addAnimation(newAnimation, forKey: "strokeEnd Animation")
-    
+
     }
-    
+
     func DegreesToRadians (value:Float) -> Float {
         return value * Float(M_PI) / 180.0
     }
@@ -89,6 +89,7 @@ class DashboardViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 
     // MARK: - Table view data source
 
@@ -99,7 +100,7 @@ class DashboardViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return 3
     }
 
@@ -129,7 +130,7 @@ class DashboardViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -148,13 +149,12 @@ class DashboardViewController: UITableViewController {
     }
     */
 
+
     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
     }
     */
 
