@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */; };
 		039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */; };
-		039CDAE31A1EDA3200B05871 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE21A1EDA3200B05871 /* DashboardViewController.swift */; };
 		039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE41A1EDA4500B05871 /* TeamViewController.swift */; };
 		03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA5951A2534D700309AD6 /* ProfileViewController.swift */; };
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
@@ -25,7 +24,6 @@
 /* Begin PBXFileReference section */
 		039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
-		039CDAE21A1EDA3200B05871 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		039CDAE41A1EDA4500B05871 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		03CBA5951A2534D700309AD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		262EB7091A1AE6C800C4602D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -85,7 +83,6 @@
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */,
 				039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */,
-				039CDAE21A1EDA3200B05871 /* DashboardViewController.swift */,
 				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,
 				03CBA5951A2534D700309AD6 /* ProfileViewController.swift */,
 				26A7135B1A0C6FD40061A751 /* Images.xcassets */,
@@ -205,7 +202,6 @@
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
 				B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
-				039CDAE31A1EDA3200B05871 /* DashboardViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
