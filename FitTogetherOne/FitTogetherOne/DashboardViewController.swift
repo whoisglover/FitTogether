@@ -58,17 +58,22 @@ class DashboardViewController: UITableViewController {
         walkedTodayMeterView.layer.addSublayer(meter)
         
         // Inner arc
+        let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.0))
+        let arcRadius : CGFloat = (rect.width / 2.0)
+        let startAngle : CGFloat = CGFloat((3 * M_PI) / 2.0)
+        let endAngle : CGFloat = CGFloat(M_PI)
+        
         progress.fillColor = UIColor.clearColor().CGColor
         progress.strokeColor = UIColor(red: 0.882, green: 0.353, blue: 0.302, alpha: 1.00).CGColor
         progress.lineWidth = meter.lineWidth
-        progress.path = UIBezierPath(ovalInRect: rect).CGPath
+        progress.path = UIBezierPath(arcCenter: arcCenterPoint, radius: arcRadius, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
         walkedTodayMeterView.layer.addSublayer(progress)
         
         // Animate the shape change
         let duration = NSNumber(float: 2.0)
         var newAnimation = CABasicAnimation(keyPath: "strokeEnd")
         newAnimation.fromValue = NSNumber(float: 0.0)
-        newAnimation.toValue = NSNumber(float:1.0)
+        newAnimation.toValue = NSNumber(float: 1.0)
         newAnimation.duration = 4.0
         newAnimation.delegate = self
         newAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
