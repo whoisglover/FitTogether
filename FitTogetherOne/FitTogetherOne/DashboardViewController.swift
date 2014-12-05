@@ -13,7 +13,8 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // set the nav bar title for this view
+        self.navigationController?.navigationBar.topItem?.title = "Dashboard"
     }
 
     override func didReceiveMemoryWarning() {
