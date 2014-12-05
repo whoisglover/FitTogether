@@ -49,11 +49,16 @@
         <scene sceneID="RMC-7c-uiI">
             <objects>
                 <tableViewController id="wxK-fg-sVS" customClass="DashboardViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="e9j-og-WhS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="e9j-og-WhS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="X1Q-6j-wBs">
+                            <rect key="frame" x="0.0" y="293" width="600" height="231"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <sections>
                             <tableViewSection id="frE-Ae-RaH">
                                 <cells>
@@ -228,6 +233,7 @@
                     <tabBarItem key="tabBarItem" title="Dashboard" id="6JW-Yw-XiR"/>
                     <connections>
                         <outlet property="dashboardTable" destination="e9j-og-WhS" id="d4T-5e-CoG"/>
+                        <outlet property="walkedTodayMeterView" destination="X1Q-6j-wBs" id="2GZ-7y-2ng"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vp8-9z-v2R" userLabel="First Responder" sceneMemberID="firstResponder"/>

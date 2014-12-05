@@ -12,6 +12,7 @@ class DashboardViewController: UITableViewController {
 
 // MARK: PROPERTIES & OUTLETS
     @IBOutlet weak var dashboardTable: UITableView!
+    @IBOutlet weak var walkedTodayMeterView: UIView!
     
     
     
@@ -26,6 +27,13 @@ class DashboardViewController: UITableViewController {
         
         // move section below navigation bar
         self.dashboardTable.contentInset = UIEdgeInsetsMake(30.0, 0.0, 0.0, 0.0)
+        
+        let screenSize : CGRect = UIScreen.mainScreen().bounds
+        
+        walkedTodayMeterView.frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.width)
+        
+        
+        
 
     }
     
@@ -45,6 +53,8 @@ class DashboardViewController: UITableViewController {
 //        }
 //        
 //    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,8 +70,7 @@ class DashboardViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
+        
         return 3
     }
 
