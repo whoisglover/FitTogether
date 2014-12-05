@@ -13,25 +13,14 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // set the nav bar title for this view
+        self.navigationController?.navigationBar.topItem?.title = "Dashboard"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-//  MARK: PRESENT SETTINGS
-    @IBAction func presentSettings(sender: AnyObject) {
-        
-        let settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("settings") as SettingsTableViewController
-        
-        self.presentViewController(settingsViewController, animated: true, completion: nil)
-        
-    }
-    
-    
     
 
     /*
