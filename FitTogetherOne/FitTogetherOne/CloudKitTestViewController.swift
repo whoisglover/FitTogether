@@ -43,21 +43,29 @@ class CloudKitTestViewController: UIViewController {
         println(container.description)
         let publicDB = container.publicCloudDatabase
         
-        let userID = CKRecordID(recordName: "testTest37")
-        let userRecord = CKRecord(recordType: "User", recordID: userID)
-        userRecord.setObject("oriyentel", forKey: "name")
-        userRecord.setObject("random team name", forKey: "team")
-        userRecord.setObject(37000, forKey: "daily_goal")
+//        let userID = CKRecordID(recordName: "testTest37")
+//        let userRecord = CKRecord(recordType: "User", recordID: userID)
+//        userRecord.setObject("oriyentel", forKey: "name")
+//        userRecord.setObject("random team name", forKey: "team")
+//        userRecord.setObject(37000, forKey: "daily_goal")
+//        
+//        
+//        publicDB.saveRecord(userRecord, completionHandler: { (savedUser: CKRecord!, error) -> Void in
+//            if(error == nil){
+//                println("SUCCESS")
+//            } else {
+//                println(error)
+//            }
+//        })
         
-        
-        publicDB.saveRecord(userRecord, completionHandler: { (savedUser: CKRecord!, error) -> Void in
+        container.fetchUserRecordIDWithCompletionHandler { (recordID : CKRecordID!, error) -> Void in
             if(error == nil){
-                println("SUCCESS")
-            } else {
-                println(error)
-            }
-        })
-        
+                let userID = recordID.recordName
+                            println(userID)
+                        } else {
+                            println(error)
+                        }
+        }
         
     }
     
