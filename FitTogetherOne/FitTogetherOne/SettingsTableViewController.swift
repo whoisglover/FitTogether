@@ -1,60 +1,28 @@
 //
-//  ProfileViewController.swift
+//  SettingsTableViewController.swift
 //  FitTogetherOne
 //
-//  Created by Joshua O'Steen on 11/25/14.
+//  Created by Alex Berger on 12/2/14.
 //  Copyright (c) 2014 Glover LLC. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UITableViewController {
-    
-//    this view controller will need to implement a Collection View under the badges section
-//    in order to display the badges images and/or names. this view will replicate the
-//    default photos gallery. 
-    
-//    to view badges section in IB, change the window base values in IB to w: Any & h: Regular
-    
+class SettingsTableViewController: UITableViewController {
 
-// MARK: DEBUG CODE
-    // replace with actual user data from AppDelegate data model
-    let testProfileData: Dictionary<String, AnyObject> = ["username" : "Josh O'Steen", "profileImage" : "default-profile.png", "team-name" : "TEST TEAM ALPHA", "total-steps" : 12345,"badges" : ["badge1.png", "badge2.png", "badge6.png", "badge11.png"]]
-    
-    
-    
-// MARK: PROPERTIES & OUTLETS
-    @IBOutlet var profileTableView: UITableView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var teamAffiliation: UILabel!
-    @IBOutlet weak var totalSteps: UILabel!
-    
-    
-// MARK: BOILERPLATE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set the nav bar title for this view
-        self.navigationController?.navigationBar.topItem?.title = "Profile"
+        self.tableView.contentInset = UIEdgeInsetsMake(50.0, 0.0, 0.0, 0.0)
 
-        // for testing purposes, inset the tableview so that headers and full
-        // cell height are show. discuss headers with design team.
-        self.profileTableView.contentInset = UIEdgeInsetsMake(37.0, 0.0, 0.0, 0.0)
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        // set name and profile picture
-        // make profile pic a circle
-        usernameLabel.text = testProfileData["username"] as? String
-        profileImage.image = UIImage(named: testProfileData["profileImage"] as String!)
-        profileImage.layer.cornerRadius = 125.0
-        profileImage.layer.borderWidth = 3.0
-        profileImage.layer.borderColor = UIColor(red: 0.882, green: 0.365, blue: 0.286, alpha: 1.00).CGColor
-        profileImage.clipsToBounds = true
-        
-        // set team and total steps
-        teamAffiliation.text = testProfileData["team-name"] as? String
-        totalSteps.text = (testProfileData["total-steps"] as NSNumber).stringValue
-        
+        //
+        self.tableView.contentInset = UIEdgeInsetsMake(-20.0, 0.0, 0.0, 0.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,13 +35,25 @@ class ProfileViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 4
+        
+        // be sure to check for user's admin status for their team.
+        // if current user is admin of current team, return 3 to show
+        // admin settings. otherwise return 2
+        
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        
+        if (section == 0 || section == 2) {
+            return 3
+        } else if (section == 1) {
+            return 4
+        }
+        
+        return 0
     }
 
     /*

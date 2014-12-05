@@ -21,6 +21,14 @@ class RootTabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    // show setting on tap
+    @IBAction func presentSettings(sender: AnyObject) {
+        let settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("settings") as SettingsTableViewController
+        
+        //self.presentViewController(settingsViewController, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
+    }
 
     /*
     // MARK: - Navigation
