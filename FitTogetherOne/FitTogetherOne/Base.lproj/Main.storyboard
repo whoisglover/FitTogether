@@ -623,10 +623,10 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="xWr-vs-mnF"/>
                                                     <exclude reference="Fc3-w9-Dri"/>
-                                                    <exclude reference="qre-aZ-Gf9"/>
+                                                    <exclude reference="xWr-vs-mnF"/>
                                                     <exclude reference="8vB-Lz-AY3"/>
+                                                    <exclude reference="qre-aZ-Gf9"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
