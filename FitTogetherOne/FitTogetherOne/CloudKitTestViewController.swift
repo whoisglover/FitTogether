@@ -40,6 +40,7 @@ class CloudKitTestViewController: UIViewController {
     @IBAction func sendToCloud(sender: AnyObject) {
         
         let container = CKContainer.defaultContainer()
+        println(container.description)
         let publicDB = container.publicCloudDatabase
         
         let userID = CKRecordID(recordName: "testTest")
