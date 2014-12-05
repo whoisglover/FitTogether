@@ -28,33 +28,57 @@ class DashboardViewController: UITableViewController {
         // move section below navigation bar
         self.dashboardTable.contentInset = UIEdgeInsetsMake(30.0, 0.0, 0.0, 0.0)
         
+        // set the walked today meter subview's height based on the screen width
+        // so that the view is always square
         let screenSize : CGRect = UIScreen.mainScreen().bounds
-        
         walkedTodayMeterView.frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.width)
         
-        
+        walkedTodayMeterUpadate(6000, dailyGoal: 10000, screenSize: walkedTodayMeterView.frame)
         
 
     }
     
-//    // override function to set cell separators to the edge of the screen
-//    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        if(self.tableView.respondsToSelector(Selector("setSeparatorInset:"))){
-//            self.dashboardTable.separatorInset = UIEdgeInsetsZero
-//        }
-//        
-//        if(self.tableView.respondsToSelector(Selector("setLayoutMargins:"))){
-//            self.dashboardTable.layoutMargins = UIEdgeInsetsZero
-//        }
-//        
-//        if(cell.respondsToSelector(Selector("setLayoutMargins:"))){
-//            cell.layoutMargins = UIEdgeInsetsZero
-//        }
-//        
-//    }
+    func walkedTodayMeterUpadate(stepsToday: Int, dailyGoal: Int, screenSize: CGRect){
+        
+        let meter = CAShapeLayer()
+        let progress = CAShapeLayer()
+        
+        // Customize the appearance of the shape layer
+        meter.fillColor = UIColor.clearColor().CGColor
+        meter.strokeColor = UIColor.grayColor().CGColor
+        meter.lineWidth = 40.0
+        
+        // Make a rect to draw our shape in
+        let rect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.85)), (screenSize.width * 0.7), (screenSize.height * 0.7))
+        
+        // Set the path for the shape layer
+        meter.path = UIBezierPath(ovalInRect: rect).CGPath
+        
+        // Add the shape layer as a sub layer of our view
+        walkedTodayMeterView.layer.addSublayer(meter)
+        
+        // Inner arc
+        progress.fillColor = UIColor.clearColor().CGColor
+        progress.strokeColor = UIColor(red: 0.882, green: 0.353, blue: 0.302, alpha: 1.00).CGColor
+        progress.lineWidth = meter.lineWidth
+        progress.path = UIBezierPath(ovalInRect: rect).CGPath
+        walkedTodayMeterView.layer.addSublayer(progress)
+        
+        // Animate the shape change
+        let duration = NSNumber(float: 2.0)
+        var newAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        newAnimation.fromValue = NSNumber(float: 0.0)
+        newAnimation.toValue = NSNumber(float:1.0)
+        newAnimation.duration = 4.0
+        newAnimation.delegate = self
+        newAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        progress.addAnimation(newAnimation, forKey: "strokeEnd Animation")
     
-
+    }
+    
+    func DegreesToRadians (value:Float) -> Float {
+        return value * Float(M_PI) / 180.0
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

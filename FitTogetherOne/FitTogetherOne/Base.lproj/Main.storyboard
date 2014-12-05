@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="X1Q-6j-wBs">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="X1Q-6j-wBs" customClass="WalkedTodayMeterView" customModule="FitTogetherOne" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="293" width="600" height="231"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
