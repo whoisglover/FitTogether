@@ -43,10 +43,12 @@ class CloudKitTestViewController: UIViewController {
         println(container.description)
         let publicDB = container.publicCloudDatabase
         
-        let userID = CKRecordID(recordName: "testTest")
+        let userID = CKRecordID(recordName: "testTest37")
         let userRecord = CKRecord(recordType: "User", recordID: userID)
-        userRecord.setObject(firstName.text, forKey: "first_name")
-        userRecord.setObject(lastName.text, forKey: "last_name")
+        userRecord.setObject("oriyentel", forKey: "name")
+        userRecord.setObject("random team name", forKey: "team")
+        userRecord.setObject(37000, forKey: "daily_goal")
+        
         
         publicDB.saveRecord(userRecord, completionHandler: { (savedUser: CKRecord!, error) -> Void in
             if(error == nil){
