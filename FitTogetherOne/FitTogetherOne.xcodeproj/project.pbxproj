@@ -11,6 +11,8 @@
 		039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */; };
 		039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE41A1EDA4500B05871 /* TeamViewController.swift */; };
 		03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA5951A2534D700309AD6 /* ProfileViewController.swift */; };
+		03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D891A3261EA00BD0546 /* DashboardViewController.swift */; };
+		03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */; };
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135B1A0C6FD40061A751 /* Images.xcassets */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
@@ -26,6 +28,8 @@
 		039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		039CDAE41A1EDA4500B05871 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		03CBA5951A2534D700309AD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		03D35D891A3261EA00BD0546 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkedTodayMeterView.swift; sourceTree = "<group>"; };
 		262EB7091A1AE6C800C4602D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTogetherOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713531A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			children = (
 				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
 				B025609C1A2E46440047E563 /* Main.storyboard */,
+				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
+				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
 				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
 				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
@@ -200,9 +206,11 @@
 				B0ED14901A2D67E500A972EC /* TeammateTableViewCell.swift in Sources */,
 				03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */,
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
+				03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */,
 				B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
+				03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
