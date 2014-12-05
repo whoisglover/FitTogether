@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTd-0i-2rt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTd-0i-2rt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -77,12 +77,22 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XS9-wi-d2C" secondAttribute="bottom" constant="3" id="8OH-P1-XEC"/>
+                                                <constraint firstAttribute="centerY" secondItem="XS9-wi-d2C" secondAttribute="centerY" id="FeJ-j2-VW7"/>
+                                                <constraint firstAttribute="centerY" secondItem="BmS-Jo-CK7" secondAttribute="centerY" id="STg-Rp-4uH"/>
                                                 <constraint firstItem="BmS-Jo-CK7" firstAttribute="top" secondItem="vZb-EP-YXw" secondAttribute="topMargin" constant="3" id="b1d-Ny-BNy"/>
                                                 <constraint firstItem="BmS-Jo-CK7" firstAttribute="leading" secondItem="vZb-EP-YXw" secondAttribute="leadingMargin" id="bDL-kh-3FH"/>
                                                 <constraint firstItem="XS9-wi-d2C" firstAttribute="top" secondItem="vZb-EP-YXw" secondAttribute="topMargin" constant="3" id="ehT-3r-onS"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="BmS-Jo-CK7" secondAttribute="bottom" constant="3" id="pzO-ov-DbO"/>
                                                 <constraint firstItem="XS9-wi-d2C" firstAttribute="trailing" secondItem="vZb-EP-YXw" secondAttribute="trailingMargin" id="t2h-dc-jH6"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="b1d-Ny-BNy"/>
+                                                    <exclude reference="pzO-ov-DbO"/>
+                                                    <exclude reference="8OH-P1-XEC"/>
+                                                    <exclude reference="ehT-3r-onS"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Cv0-Uz-unH">
