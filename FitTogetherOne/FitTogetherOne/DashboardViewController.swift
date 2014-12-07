@@ -42,17 +42,20 @@ class DashboardViewController: UITableViewController {
         // set the nav bar title for this view
         let userID : (isLoggedIn: Bool, value: String) = CloudKitInterface.fetchUserID()!
         if userID.isLoggedIn == false{
-            println(userID.value)
-            println("in app delegate")
+            //println(userID.value)
+            println("returned from cloudkitInterface, logged in is false")
             //prompt to sign in to icloud
             let takeMeToSettings = UIAlertController(title: "No iCloud Account", message: "Please go to Settings -> iCloud to create or sign in to your iCloud account. You must be logged in to iCloud to use Fit Together.", preferredStyle: UIAlertControllerStyle.Alert)
             takeMeToSettings.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
                 let icloudURL = NSURL(string: UIApplicationOpenSettingsURLString)
                 UIApplication.sharedApplication().openURL(icloudURL!)
-                self.presentViewController(takeMeToSettings, animated: true, completion: { () -> Void in
-                    println("Just went to settings")
-                })
             }))
+            
+            self.presentViewController(takeMeToSettings, animated: true, completion: { () -> Void in
+                println("Just went to settings")
+            })
+            //let icloudURL = NSURL(string: UIApplicationOpenSettingsURLString)
+            //UIApplication.sharedApplication().openURL(icloudURL!)
             
         }else {
             println("logged in is true value is: \(userID.value)")
