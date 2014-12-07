@@ -38,7 +38,7 @@ class ProfileViewController: UITableViewController {
 
         // for testing purposes, inset the tableview so that headers and full
         // cell height are show. discuss headers with design team.
-        self.profileTableView.contentInset = UIEdgeInsetsMake(37.0, 0.0, 0.0, 0.0)
+        self.profileTableView.contentInset = UIEdgeInsetsMake(30.0, 0.0, 0.0, 0.0)
         
         // set name and profile picture
         // make profile pic a circle
