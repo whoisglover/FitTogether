@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033A5FE01A3434CF0092B694 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */; };
+		033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */; };
+		033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */; };
 		039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */; };
 		039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */; };
 		039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE41A1EDA4500B05871 /* TeamViewController.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
+		033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotOnTeamViewController.swift; sourceTree = "<group>"; };
+		033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
 		039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		039CDAE41A1EDA4500B05871 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +88,9 @@
 			children = (
 				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
 				B025609C1A2E46440047E563 /* Main.storyboard */,
+				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
+				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
+				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
 				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
 				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
 				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
@@ -203,14 +212,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02560A21A2E48020047E563 /* AppDelegate.swift in Sources */,
+				033A5FE01A3434CF0092B694 /* JoinTeamViewController.swift in Sources */,
 				B0ED14901A2D67E500A972EC /* TeammateTableViewCell.swift in Sources */,
 				03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */,
+				033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */,
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
 				03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */,
 				B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
 				03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */,
+				033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
