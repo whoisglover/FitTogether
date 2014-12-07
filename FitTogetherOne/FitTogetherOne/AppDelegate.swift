@@ -16,8 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let userID : (isLoggedIn: Bool, value: String) = CloudKitInterface.fetchUserID()!
+        if userID.isLoggedIn == false{
+            println(userID.value)
+            //prompt to sign in to icloud
+            let icloudURL = NSURL(fileURLWithPath: "prefs:root=CASTLE")
+            //NSURL*url=[NSURL URLWithString:@"prefs:root=Castle"];
+            UIApplication.sharedApplication().openURL(icloudURL!)
+        }
         
         
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
         return true
     }
 
