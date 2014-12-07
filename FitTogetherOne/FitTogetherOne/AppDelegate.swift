@@ -16,19 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let userID : (isLoggedIn: Bool, value: String) = CloudKitInterface.fetchUserID()!
-        if userID.isLoggedIn == false{
-            println(userID.value)
-            println("in app delegate")
-            //prompt to sign in to icloud
-            let icloudURL = NSURL(string: UIApplicationOpenSettingsURLString)
-            UIApplication.sharedApplication().openURL(icloudURL!)
-        }else {
-            println("logged in is true value is: \(userID.value)")
-            //check if there is a user in cloudkit where record_id = userID.value
-            //if there is grab the record and fill user data model
-            //if not create a new user record with record_id = userID.value
-        }
+        
         
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
