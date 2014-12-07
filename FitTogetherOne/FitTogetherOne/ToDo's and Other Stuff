@@ -1,8 +1,0 @@
-check that HealthKit is available with 'isHealthDataAvailable'
-
-Instantiate ONE instance of 'HKHealthStore' to interface with the HealthKit database
-
-Request HK authorization to access HealthKit using 'requestAuthorizationToShareTypes:readTypes:completion:'
-
-Query HealthKit database for steps. Be aware that READ data is only provided when the user authorizes such. If they don't, it will appear as though there is no data present
-
