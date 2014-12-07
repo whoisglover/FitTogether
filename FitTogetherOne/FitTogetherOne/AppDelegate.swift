@@ -21,13 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             println(userID.value)
             println("in app delegate")
             //prompt to sign in to icloud
-            
-//            NSURL*url=[NSURL URLWithString:@"prefs:root=WIFI"];
-//            [[UIApplication sharedApplication] openURL:url];
-            
-            
-            let icloudURL = NSURL(string: "prefs:root=CASTLE")
+            let icloudURL = NSURL(string: UIApplicationOpenSettingsURLString)
             UIApplication.sharedApplication().openURL(icloudURL!)
+        }else {
+            println("logged in is true value is: \(userID.value)")
+            //check if there is a user in cloudkit where record_id = userID.value
+            //if there is grab the record and fill user data model
+            //if not create a new user record with record_id = userID.value
         }
         
         

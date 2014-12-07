@@ -52,11 +52,17 @@ class CloudKitInterface: NSObject {
         
         var count: Int = 0
         let time = NSDate(timeIntervalSinceNow: 0)
-        while(loggedIn == nil || errorMessage == nil){
+        while(loggedIn == nil){
             //do nothing
+//            println("+")
         }
         println(errorMessage)
-
+        if(loggedIn == true){
+            while(userID==nil){
+             //do nothing
+             //println("-")
+            }
+        }
         
 //        return (false, "test")
         return (loggedIn!, userID ?? errorMessage!)
