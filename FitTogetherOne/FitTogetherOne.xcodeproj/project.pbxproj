@@ -16,6 +16,7 @@
 		03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA5951A2534D700309AD6 /* ProfileViewController.swift */; };
 		03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D891A3261EA00BD0546 /* DashboardViewController.swift */; };
 		03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */; };
+		03E312F51A351E1600E9B525 /* ToDo's and Other Stuff in Resources */ = {isa = PBXBuildFile; fileRef = 03E312F41A351E1600E9B525 /* ToDo's and Other Stuff */; };
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135B1A0C6FD40061A751 /* Images.xcassets */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
@@ -36,6 +37,7 @@
 		03CBA5951A2534D700309AD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		03D35D891A3261EA00BD0546 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkedTodayMeterView.swift; sourceTree = "<group>"; };
+		03E312F41A351E1600E9B525 /* ToDo's and Other Stuff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ToDo's and Other Stuff"; path = "FitTogetherOne/ToDo's and Other Stuff"; sourceTree = "<group>"; };
 		262EB7091A1AE6C800C4602D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTogetherOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713531A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		26A713461A0C6FD30061A751 = {
 			isa = PBXGroup;
 			children = (
+				03E312F41A351E1600E9B525 /* ToDo's and Other Stuff */,
 				262EB7091A1AE6C800C4602D /* HealthKit.framework */,
 				26A713751A0C71460061A751 /* CloudKit.framework */,
 				26A713511A0C6FD40061A751 /* FitTogetherOne */,
@@ -198,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E312F51A351E1600E9B525 /* ToDo's and Other Stuff in Resources */,
 				26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */,
 				B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */,
 				B02560A01A2E474C0047E563 /* Main.storyboard in Resources */,

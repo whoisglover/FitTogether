@@ -1003,12 +1003,12 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="diE-AJ-8ml"/>
-                                                    <exclude reference="bfi-3V-7pI"/>
                                                     <exclude reference="7is-hz-5ny"/>
                                                     <exclude reference="J8E-yn-054"/>
-                                                    <exclude reference="aXY-2w-42T"/>
                                                     <exclude reference="WY4-np-0NA"/>
+                                                    <exclude reference="aXY-2w-42T"/>
+                                                    <exclude reference="bfi-3V-7pI"/>
+                                                    <exclude reference="diE-AJ-8ml"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1081,8 +1081,8 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="0QR-gv-Caa"/>
-                                                    <exclude reference="cF3-lc-agk"/>
                                                     <exclude reference="XAn-7b-uwR"/>
+                                                    <exclude reference="cF3-lc-agk"/>
                                                     <exclude reference="jOc-kf-leh"/>
                                                 </mask>
                                             </variation>
