@@ -40,14 +40,26 @@ class CloudKitInterface: NSObject {
                 loggedIn = true
                 userID = recordID.recordName
             } else {
-                println(error)
+                println("in else in fetchUserRecord completion")
+                println(error.description)
                 loggedIn = false
                 errorMessage = error.description
 
             }
         }
-        return (false, "test")
-//        return (loggedIn!, userID ?? errorMessage!)
+        println("here")
+        println(loggedIn)
+        
+        var count: Int = 0
+        let time = NSDate(timeIntervalSinceNow: 0)
+        while(loggedIn == nil || errorMessage == nil){
+            //do nothing
+        }
+        println(errorMessage)
+
+        
+//        return (false, "test")
+        return (loggedIn!, userID ?? errorMessage!)
     }
     //        let userID = CKRecordID(recordName: "testTest37")
     //        let userRecord = CKRecord(recordType: "User", recordID: userID)

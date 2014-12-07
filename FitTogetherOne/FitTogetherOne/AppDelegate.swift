@@ -19,9 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userID : (isLoggedIn: Bool, value: String) = CloudKitInterface.fetchUserID()!
         if userID.isLoggedIn == false{
             println(userID.value)
+            println("in app delegate")
             //prompt to sign in to icloud
-            let icloudURL = NSURL(fileURLWithPath: "prefs:root=CASTLE")
-            //NSURL*url=[NSURL URLWithString:@"prefs:root=Castle"];
+            
+//            NSURL*url=[NSURL URLWithString:@"prefs:root=WIFI"];
+//            [[UIApplication sharedApplication] openURL:url];
+            
+            
+            let icloudURL = NSURL(string: "prefs:root=CASTLE")
             UIApplication.sharedApplication().openURL(icloudURL!)
         }
         
