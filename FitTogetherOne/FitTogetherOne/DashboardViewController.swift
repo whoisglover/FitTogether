@@ -13,6 +13,7 @@ class DashboardViewController: UITableViewController {
     // MARK: PROPERTIES & OUTLETS
     @IBOutlet weak var dashboardTable: UITableView!
     @IBOutlet weak var walkedTodayMeterView: WalkedTodayMeterView!
+    @IBOutlet weak var stepsWalkedToday: UILabel!
 
     
     override func viewDidLoad() {

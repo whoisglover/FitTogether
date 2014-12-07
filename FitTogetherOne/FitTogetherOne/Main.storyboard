@@ -260,7 +260,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.2196078431372549" green="0.49411764705882355" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.2196078431372549" green="0.49411764705882355" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -595,14 +595,35 @@
                             <rect key="frame" x="0.0" y="293" width="600" height="231"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Schedule Daily Goal Notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-fc-RRz">
-                                    <rect key="frame" x="49" y="39" width="247" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXXXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XV-ZB-EPL">
+                                    <rect key="frame" x="210" y="53" width="180" height="60"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="walked today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-fc-RRz">
+                                    <rect key="frame" x="249" y="105" width="103" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFw-U9-rxw">
+                                    <rect key="frame" x="233" y="121" width="135" height="30"/>
+                                    <state key="normal" title="Daily Goal: XXXXXX">
+                                        <color key="titleColor" red="0.8862745098" green="0.36862745099999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="aFw-U9-rxw" firstAttribute="top" secondItem="5XV-ZB-EPL" secondAttribute="bottom" constant="8" id="3Tf-19-poX"/>
+                                <constraint firstAttribute="centerX" secondItem="LAb-fc-RRz" secondAttribute="centerX" id="PM0-eH-thJ"/>
+                                <constraint firstAttribute="centerY" secondItem="LAb-fc-RRz" secondAttribute="centerY" id="d6C-NT-tV4"/>
+                                <constraint firstItem="LAb-fc-RRz" firstAttribute="centerX" secondItem="5XV-ZB-EPL" secondAttribute="centerX" id="ljL-P2-6tu"/>
+                                <constraint firstItem="LAb-fc-RRz" firstAttribute="top" secondItem="5XV-ZB-EPL" secondAttribute="bottom" constant="-8" id="n31-7q-s2H"/>
+                                <constraint firstItem="LAb-fc-RRz" firstAttribute="centerX" secondItem="aFw-U9-rxw" secondAttribute="centerX" id="wb5-cd-dhI"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="I22-Ya-9wK">
@@ -778,6 +799,7 @@
                     <tabBarItem key="tabBarItem" title="Dashboard" id="B8T-aK-prT"/>
                     <connections>
                         <outlet property="dashboardTable" destination="olK-oe-h75" id="hQL-Gg-Rru"/>
+                        <outlet property="stepsWalkedToday" destination="5XV-ZB-EPL" id="agq-aM-5yu"/>
                         <outlet property="walkedTodayMeterView" destination="bTL-OG-9N7" id="QUd-RA-e88"/>
                     </connections>
                 </tableViewController>
@@ -1119,7 +1141,7 @@
         <image name="Settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CAG-FT-cKD"/>
-        <segue reference="OCl-ne-96C"/>
+        <segue reference="18D-bP-H8q"/>
+        <segue reference="0jl-zD-q4f"/>
     </inferredMetricsTieBreakers>
 </document>
