@@ -34,9 +34,7 @@ class ProfileViewController: UITableViewController {
 // MARK: BOILERPLATE
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // set the nav bar title for this view
-        self.navigationController?.navigationBar.topItem?.title = "Profile"
+
 
         // for testing purposes, inset the tableview so that headers and full
         // cell height are show. discuss headers with design team.
@@ -55,6 +53,11 @@ class ProfileViewController: UITableViewController {
         teamAffiliation.text = testProfileData["team-name"] as? String
         totalSteps.text = (testProfileData["total-steps"] as NSNumber).stringValue
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // set the nav bar title for this view
+        self.navigationController?.navigationBar.topItem?.title = "Profile"
     }
 
     override func didReceiveMemoryWarning() {
