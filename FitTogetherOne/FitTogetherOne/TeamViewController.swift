@@ -28,10 +28,17 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         //segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
         
+        
+        
+        // adjust table view contents to appropiately space the table head
+        // and section under the team name and segemented control
         self.teamTableView.contentInset = UIEdgeInsetsMake(-25.0, 0.0, 0.0, 0.0)
 
-        // Do any additional setup after loading the view.
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // set the nav bar title for this view
+        self.navigationController?.navigationBar.topItem?.title = "Team"
     }
 
     override func didReceiveMemoryWarning() {
