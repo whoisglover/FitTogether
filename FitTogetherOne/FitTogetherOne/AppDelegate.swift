@@ -16,7 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        let userID : (isLoggedIn: Bool, value: String) = CloudKitInterface.fetchUserID()!
+        if userID.isLoggedIn == false{
+            //println(userID.value)
+            println("returned from cloudkitInterface, logged in is false")
+            //prompt to sign in to icloud
+            let takeMeToSettings = UIAlertController(title: "No iCloud Account", message: "Please go to Settings -> iCloud to create or sign in to your iCloud account. You must be logged in to iCloud to use Fit Together.", preferredStyle: UIAlertControllerStyle.Alert)
+            takeMeToSettings.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+                let icloudURL = NSURL(string: UIApplicationOpenSettingsURLString)
+                UIApplication.sharedApplication().openURL(icloudURL!)
+            }))
+            
+            self.presentViewController(takeMeToSettings, animated: true, completion: { () -> Void in
+                println("Just went to settings")
+            })
+            //let icloudURL = NSURL(string: UIApplicationOpenSettingsURLString)
+            //UIApplication.sharedApplication().openURL(icloudURL!)
+            
+        }else {
+            println("logged in is true value is: \(userID.value)")
+            //check if there is a user in cloudkit where record_id = userID.value
+            //if there is grab the record and fill user data model
+            //if not create a new user record with record_id = userID.value
+            
+        }
         
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))

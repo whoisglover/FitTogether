@@ -163,7 +163,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Competition start/end" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaJ-V8-nqu">
-                                                    <rect key="frame" x="8" y="12" width="175" height="21"/>
+                                                    <rect key="frame" x="8" y="12.5" width="168" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1111,7 +1111,7 @@
         <image name="Settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0jl-zD-q4f"/>
-        <segue reference="18D-bP-H8q"/>
+        <segue reference="CAG-FT-cKD"/>
+        <segue reference="OCl-ne-96C"/>
     </inferredMetricsTieBreakers>
 </document>
