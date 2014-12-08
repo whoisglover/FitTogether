@@ -1,14 +1,14 @@
 //
-//  RootTabBarViewController.swift
+//  NotOnTeamViewController.swift
 //  FitTogetherOne
 //
-//  Created by Joshua O'Steen on 11/20/14.
+//  Created by Joshua O'Steen on 11/25/14.
 //  Copyright (c) 2014 Glover LLC. All rights reserved.
 //
 
 import UIKit
 
-class RootTabBarViewController: UITabBarController {
+class NotOnTeamViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,6 @@ class RootTabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    // show setting on tap
-    @IBAction func presentSettings(sender: AnyObject) {
-        let settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("settings") as SettingsTableViewController
-        
-        //self.presentViewController(settingsViewController, animated: true, completion: nil)
-        
-        self.navigationController?.pushViewController(settingsViewController, animated: true)
-    }
 
     /*
     // MARK: - Navigation
