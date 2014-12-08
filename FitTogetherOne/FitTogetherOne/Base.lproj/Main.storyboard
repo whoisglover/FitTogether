@@ -146,8 +146,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Kwd-mw-WaO"/>
                                 <exclude reference="kkf-9Z-vps"/>
+                                <exclude reference="Kwd-mw-WaO"/>
                                 <exclude reference="M6e-H2-Zir"/>
                                 <exclude reference="1G0-dm-It6"/>
                                 <exclude reference="8pr-JD-hl3"/>
@@ -508,9 +508,9 @@
                                     <mask key="constraints">
                                         <exclude reference="33R-8J-e0W"/>
                                         <exclude reference="7Ea-vf-Qg9"/>
-                                        <exclude reference="qIM-9u-6xg"/>
                                         <exclude reference="RhO-zf-D9g"/>
                                         <exclude reference="fBG-xg-o3M"/>
+                                        <exclude reference="qIM-9u-6xg"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -524,8 +524,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="zyl-6J-Ffe"/>
                                         <exclude reference="xqu-7B-Ndr"/>
+                                        <exclude reference="zyl-6J-Ffe"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -539,8 +539,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rmy-3i-TCA"/>
                                         <exclude reference="poC-I7-9Yd"/>
+                                        <exclude reference="rmy-3i-TCA"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -593,10 +593,10 @@
                                 <exclude reference="s88-Eq-Ayx"/>
                                 <exclude reference="6Il-XR-gyO"/>
                                 <exclude reference="FM7-jd-gbn"/>
-                                <exclude reference="duC-ZC-Htg"/>
-                                <exclude reference="iS1-Re-5uk"/>
                                 <exclude reference="5QR-DV-gXd"/>
                                 <exclude reference="FfR-Op-RaO"/>
+                                <exclude reference="duC-ZC-Htg"/>
+                                <exclude reference="iS1-Re-5uk"/>
                             </mask>
                         </variation>
                     </view>
