@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTd-0i-2rt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1004,12 +1003,12 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="diE-AJ-8ml"/>
-                                                    <exclude reference="bfi-3V-7pI"/>
                                                     <exclude reference="7is-hz-5ny"/>
                                                     <exclude reference="J8E-yn-054"/>
-                                                    <exclude reference="aXY-2w-42T"/>
                                                     <exclude reference="WY4-np-0NA"/>
+                                                    <exclude reference="aXY-2w-42T"/>
+                                                    <exclude reference="bfi-3V-7pI"/>
+                                                    <exclude reference="diE-AJ-8ml"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1082,8 +1081,8 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="0QR-gv-Caa"/>
-                                                    <exclude reference="cF3-lc-agk"/>
                                                     <exclude reference="XAn-7b-uwR"/>
+                                                    <exclude reference="cF3-lc-agk"/>
                                                     <exclude reference="jOc-kf-leh"/>
                                                 </mask>
                                             </variation>
