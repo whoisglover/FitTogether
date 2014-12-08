@@ -9,17 +9,20 @@
 import UIKit
 
 class logInViewController: UIViewController {
-    @IBOutlet weak var username: UITextField!
-
+    
+    @IBOutlet weak var userName: UITextField!
+    var userRecordID:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //try to accesss data from app delegate here to get the user record ID
+        println("inside of loginViewController and the userData model has this record id:   ")
         var tapDismiss = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tapDismiss)
     }
     
     func dismissKeyboard(){
-        username.resignFirstResponder()
+        
+        userName.resignFirstResponder()
     }
         
         
