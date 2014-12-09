@@ -19,6 +19,7 @@
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135B1A0C6FD40061A751 /* Images.xcassets */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
+		B022AA2D1A3526BE003A7FD7 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */; };
 		B02560A01A2E474C0047E563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B025609C1A2E46440047E563 /* Main.storyboard */; };
 		B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B025609A1A2E46440047E563 /* LaunchScreen.xib */; };
 		B02560A21A2E48020047E563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713541A0C6FD40061A751 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		26A7136A1A0C6FD40061A751 /* FitTogetherOneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitTogetherOneTests.swift; sourceTree = "<group>"; };
 		26A713741A0C71440061A751 /* FitTogetherOne.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FitTogetherOne.entitlements; sourceTree = "<group>"; };
 		26A713751A0C71460061A751 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		B025609B1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B025609D1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B02560A51A2E54080047E563 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
 				B025609C1A2E46440047E563 /* Main.storyboard */,
+				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
 				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
 				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
@@ -217,6 +220,7 @@
 				03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */,
 				033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */,
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
+				B022AA2D1A3526BE003A7FD7 /* logInViewController.swift in Sources */,
 				03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */,
 				B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
