@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030305E41A36D4D90035AD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030305E31A36D4D90035AD6F /* Main.storyboard */; };
 		033A5FE01A3434CF0092B694 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */; };
 		033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */; };
 		033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */; };
@@ -17,7 +18,6 @@
 		03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA5951A2534D700309AD6 /* ProfileViewController.swift */; };
 		03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D891A3261EA00BD0546 /* DashboardViewController.swift */; };
 		03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */; };
-		03DFA7351A36C85100D8754A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DFA7331A36C85100D8754A /* Main.storyboard */; };
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135B1A0C6FD40061A751 /* Images.xcassets */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030305E31A36D4D90035AD6F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotOnTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		03CBA5951A2534D700309AD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		03D35D891A3261EA00BD0546 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkedTodayMeterView.swift; sourceTree = "<group>"; };
-		03DFA7341A36C85100D8754A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../../../Volumes/MEDIA/Documents/School/Fall 2014 Semester/IT 4500/Tests/DatePicker/DatePicker/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		262EB7091A1AE6C800C4602D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTogetherOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713531A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		26A713511A0C6FD40061A751 /* FitTogetherOne */ = {
 			isa = PBXGroup;
 			children = (
-				03DFA7331A36C85100D8754A /* Main.storyboard */,
+				030305E31A36D4D90035AD6F /* Main.storyboard */,
 				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
 				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
@@ -252,7 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DFA7351A36C85100D8754A /* Main.storyboard in Resources */,
+				030305E41A36D4D90035AD6F /* Main.storyboard in Resources */,
 				26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */,
 				B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */,
 			);
@@ -285,14 +285,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		03DFA7331A36C85100D8754A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03DFA7341A36C85100D8754A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B025609A1A2E46440047E563 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
