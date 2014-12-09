@@ -85,11 +85,10 @@ class DashboardViewController: UITableViewController {
         walkedTodayMeterView.layer.addSublayer(progress)
         
         // Animate the shape change
-        let duration = NSNumber(float: 2.0)
         var newAnimation = CABasicAnimation(keyPath: "strokeEnd")
         newAnimation.fromValue = NSNumber(float: 0.0)
         newAnimation.toValue = NSNumber(float: 1.0)
-        newAnimation.duration = 2.7
+        newAnimation.duration = 3.7
         newAnimation.delegate = self
         newAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         progress.addAnimation(newAnimation, forKey: "strokeEnd Animation")
