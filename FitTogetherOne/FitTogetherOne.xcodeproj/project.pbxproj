@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		030305E41A36D4D90035AD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030305E31A36D4D90035AD6F /* Main.storyboard */; };
+		032AAF6D1A36DE8B0079A659 /* CreateChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */; };
+		032AAF6E1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AAF6C1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift */; };
 		033A5FE01A3434CF0092B694 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */; };
 		033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */; };
 		033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		030305E31A36D4D90035AD6F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChallengeTableViewController.swift; sourceTree = "<group>"; };
+		032AAF6C1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsToChallengeTableViewController.swift; sourceTree = "<group>"; };
 		033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotOnTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		033A5FE71A3456270092B694 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
+				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -98,6 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,
+				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
+				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
+				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
+				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -113,6 +123,8 @@
 		033A5FEA1A3456F90092B694 /* Settings & Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
+				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
 				033A5FE31A34555C0092B694 /* FTNotifications.swift */,
 			);
 			name = "Settings & Classes";
@@ -141,15 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				030305E31A36D4D90035AD6F /* Main.storyboard */,
-				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
-				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
-				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
-				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
-				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
-				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
-				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
-				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
+				032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */,
+				032AAF6C1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift */,
 				033A5FE61A3455FB0092B694 /* Main Tabs */,
 				033A5FEA1A3456F90092B694 /* Settings & Classes */,
 				033A5FE51A3455810092B694 /* Root Structure */,
@@ -273,8 +279,10 @@
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
 				B022AA2D1A3526BE003A7FD7 /* logInViewController.swift in Sources */,
 				03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */,
+				032AAF6D1A36DE8B0079A659 /* CreateChallengeTableViewController.swift in Sources */,
 				B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
+				032AAF6E1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
 				03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */,
 				033A5FE41A34555C0092B694 /* FTNotifications.swift in Sources */,

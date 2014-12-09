@@ -10,6 +10,10 @@ import UIKit
 
 class TeamsToChallengeTableViewController: UITableViewController {
 
+    
+    let allTeams = ["FitTogetherTwo", "Tyten's Terrors", "Dale's Destroyers", "Reuben's Runners", "Run Track Minds", "The Mighty Morphin Flower Arrangers", "Cell-u-Light","Wii Not Fit", "The Cereal Killers", "Bod Squad", "Team Ramrod","Walk the Walk", "Mission Slimpossible", "Waist Watchers", "Thick n Thin" ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,13 +34,22 @@ class TeamsToChallengeTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return allTeams.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("teamChallenge", forIndexPath:indexPath) as UITableViewCell
+        
+        cell.textLabel?.text = allTeams[indexPath.row]
+        
+        return cell
     }
 
     /*
