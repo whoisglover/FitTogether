@@ -90,6 +90,8 @@
 		033A5FE71A3456270092B694 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
+				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -98,6 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,
+				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
+				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
+				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
+				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -113,6 +119,8 @@
 		033A5FEA1A3456F90092B694 /* Settings & Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
+				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
 				033A5FE31A34555C0092B694 /* FTNotifications.swift */,
 			);
 			name = "Settings & Classes";
@@ -141,14 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				030305E31A36D4D90035AD6F /* Main.storyboard */,
-				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
-				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
-				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
-				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
-				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
-				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
-				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
-				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				033A5FE61A3455FB0092B694 /* Main Tabs */,
 				033A5FEA1A3456F90092B694 /* Settings & Classes */,
