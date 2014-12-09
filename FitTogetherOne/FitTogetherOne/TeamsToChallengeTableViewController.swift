@@ -1,23 +1,17 @@
 //
-//  JoinTeamViewController.swift
+//  TeamsToChallengeTableViewController.swift
 //  FitTogetherOne
 //
-//  Created by Joshua O'Steen on 12/6/14.
+//  Created by Alex Berger on 12/8/14.
 //  Copyright (c) 2014 Glover LLC. All rights reserved.
 //
 
 import UIKit
 
-class JoinTeamViewController: UITableViewController, UITextViewDelegate {
+class TeamsToChallengeTableViewController: UITableViewController {
 
     
-    @IBOutlet weak var teamCode: UITextField!
-    @IBOutlet weak var checkTeamCode: UIButton!
-    @IBOutlet weak var confirmedTeamCodeDescription: UITextView!
-    @IBOutlet weak var joinTeamButton: UIButton!
-    var codeCheckSuccess = false
-    let dummyTeamName = "Test Team Alpha"
-    let dummyTeamDescription = "The best team on FitTogether!"
+    let allTeams = ["FitTogetherTwo", "Tyten's Terrors", "Dale's Destroyers", "Reuben's Runners", "Run Track Minds", "The Mighty Morphin Flower Arrangers", "Cell-u-Light","Wii Not Fit", "The Cereal Killers", "Bod Squad", "Team Ramrod","Walk the Walk", "Mission Slimpossible", "Waist Watchers", "Thick n Thin" ]
     
     
     override func viewDidLoad() {
@@ -28,61 +22,7 @@ class JoinTeamViewController: UITableViewController, UITextViewDelegate {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        var tapDismiss = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        self.view.addGestureRecognizer(tapDismiss)
-        
-        // add observer to notify this class that the text in the teamCode textfield changed
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textViewDidChange:", name: UITextFieldTextDidChangeNotification, object: teamCode)
-        
     }
-    
-    // text in the teamCode textfield changed, check length to auto check
-    // the input team code against team codes stored in cloudkit
-    func textViewDidChange(notification: NSNotification) {
-        
-        // length is 10, auto check cloudkit team codes
-        if(teamCode.text.utf16Count == 10){
-            if(checkTeamCodeInCloudKit()){
-                
-                // reload table view data to show the second cell
-                // containing the team info
-                self.tableView.reloadData()
-                
-                // disable teamCode editing
-                teamCode.userInteractionEnabled = false
-                
-                // set team info
-                confirmedTeamCodeDescription.text = "Team Name: \(dummyTeamName)\n\nDescription: \(dummyTeamDescription)"
-                
-                // change buttons
-                joinTeamButton.backgroundColor = UIColor(red: 0.839, green: 0.345, blue: 0.310, alpha: 1.00) // tomato
-                joinTeamButton.enabled = true
-                checkTeamCode.backgroundColor = UIColor(red: 0.376, green: 0.745, blue: 0.408, alpha: 1.00) // green
-                checkTeamCode.titleLabel?.textAlignment = NSTextAlignment.Center
-                checkTeamCode.setTitle("Go!", forState: UIControlState.Normal)
-            }
-        }
-        
-    }
-    
-    // check the input team code against cloudkit team codes
-    func checkTeamCodeInCloudKit() -> Bool{
-        
-        codeCheckSuccess = true
-        
-        return true
-    }
-    
-    @IBAction func joinTeam(sender: AnyObject) {
-        
-    }
-    
-    func dismissKeyboard(){
-        teamCode.resignFirstResponder()
-    }
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,16 +34,22 @@ class JoinTeamViewController: UITableViewController, UITextViewDelegate {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 2
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return allTeams.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if(codeCheckSuccess && section == 0){
-            return 2
-        }
+        var cell = tableView.dequeueReusableCellWithIdentifier("teamChallenge", forIndexPath:indexPath) as UITableViewCell
         
-        return 1
+        cell.textLabel?.text = allTeams[indexPath.row]
+        
+        return cell
     }
 
     /*

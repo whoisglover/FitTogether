@@ -19,7 +19,7 @@ class ProfileViewController: UITableViewController {
 
 // MARK: DEBUG CODE
     // replace with actual user data from AppDelegate data model
-    let testProfileData: Dictionary<String, AnyObject> = ["username" : "Josh O'Steen", "profileImage" : "default-profile.png", "team-name" : "TEST TEAM ALPHA", "total-steps" : 12345,"badges" : ["badge1.png", "badge2.png", "badge6.png", "badge11.png"]]
+    let testProfileData: Dictionary<String, AnyObject> = ["username" : "Josh O'Steen", "profileImage" : "default-profile.png", "team-name" : "FitTogetherOne", "total-steps" : 103849,"badges" : ["badge1.png", "badge2.png", "badge6.png", "badge11.png"]]
     
     
     
