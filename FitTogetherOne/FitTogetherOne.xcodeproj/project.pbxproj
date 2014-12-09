@@ -10,6 +10,7 @@
 		033A5FE01A3434CF0092B694 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */; };
 		033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */; };
 		033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */; };
+		033A5FE41A34555C0092B694 /* FTNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FE31A34555C0092B694 /* FTNotifications.swift */; };
 		039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */; };
 		039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */; };
 		039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE41A1EDA4500B05871 /* TeamViewController.swift */; };
@@ -31,6 +32,8 @@
 		033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotOnTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
+		033A5FE31A34555C0092B694 /* FTNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTNotifications.swift; sourceTree = "<group>"; };
+		033A5FEB1A3460DC0092B694 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		039CDAE41A1EDA4500B05871 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +51,6 @@
 		26A713751A0C71460061A751 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		B025609B1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B025609D1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B02560A51A2E54080047E563 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033A5FE51A3455810092B694 /* Root Structure */ = {
+			isa = PBXGroup;
+			children = (
+				039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */,
+				039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */,
+			);
+			name = "Root Structure";
+			sourceTree = "<group>";
+		};
+		033A5FE61A3455FB0092B694 /* Main Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				033A5FE71A3456270092B694 /* Dashboard */,
+				033A5FE81A34565D0092B694 /* Team */,
+				033A5FE91A3456B80092B694 /* Profile */,
+			);
+			name = "Main Tabs";
+			sourceTree = "<group>";
+		};
+		033A5FE71A3456270092B694 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
+				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		033A5FE81A34565D0092B694 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,
+				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
+				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
+				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
+				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
+		033A5FE91A3456B80092B694 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				03CBA5951A2534D700309AD6 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		033A5FEA1A3456F90092B694 /* Settings & Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
+				033A5FE31A34555C0092B694 /* FTNotifications.swift */,
+			);
+			name = "Settings & Classes";
+			sourceTree = "<group>";
+		};
 		26A713461A0C6FD30061A751 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +158,13 @@
 				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
 				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
-				039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */,
-				039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */,
-				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,
-				03CBA5951A2534D700309AD6 /* ProfileViewController.swift */,
-				26A7135B1A0C6FD40061A751 /* Images.xcassets */,
-				26A713741A0C71440061A751 /* FitTogetherOne.entitlements */,
+				033A5FE61A3455FB0092B694 /* Main Tabs */,
+				033A5FEA1A3456F90092B694 /* Settings & Classes */,
+				033A5FE51A3455810092B694 /* Root Structure */,
 				26A713521A0C6FD40061A751 /* Supporting Files */,
+				26A7135B1A0C6FD40061A751 /* Images.xcassets */,
+				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
+				26A713741A0C71440061A751 /* FitTogetherOne.entitlements */,
 			);
 			path = FitTogetherOne;
 			sourceTree = "<group>";
@@ -201,9 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033A5FEC1A3460DC0092B694 /* Main.storyboard in Resources */,
 				26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */,
 				B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */,
-				B02560A01A2E474C0047E563 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +285,7 @@
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
 				03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */,
+				033A5FE41A34555C0092B694 /* FTNotifications.swift in Sources */,
 				033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,14 +299,6 @@
 				B025609B1A2E46440047E563 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		B025609C1A2E46440047E563 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B025609D1A2E46440047E563 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

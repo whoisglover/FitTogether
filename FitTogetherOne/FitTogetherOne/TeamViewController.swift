@@ -12,7 +12,7 @@ import UIKit
 class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
 // MARK: TABLE VIEW TEST DATA
-    let team : [Dictionary<String, AnyObject>] = [["image" : "default-profile.png", "name" : "Alex", "steps" : 12345], ["image" : "default-profile.png", "name" : "Josh", "steps" : 43566], ["image" : "default-profile.png", "name" : "Danny", "steps" : 25432], ["image" : "default-profile.png", "name" : "Jake", "steps" : 8345], ["image" : "default-profile.png", "name" : "Zack", "steps" : 8965], ["image" : "default-profile.png", "name" : "Jake", "steps" : 9865], ["image" : "default-profile.png", "name" : "Randy", "steps" : 6745], ["image" : "default-profile.png", "name" : "Alex", "steps" : 12345], ["image" : "default-profile.png", "name" : "Josh", "steps" : 43566], ["image" : "default-profile.png", "name" : "Danny", "steps" : 25432], ["image" : "default-profile.png", "name" : "Jake", "steps" : 8345], ["image" : "default-profile.png", "name" : "Zack", "steps" : 8965], ["image" : "default-profile.png", "name" : "Jake", "steps" : 9865], ["image" : "default-profile.png", "name" : "Randy", "steps" : 6745], ["image" : "default-profile.png", "name" : "Alex", "steps" : 12345], ["image" : "default-profile.png", "name" : "Josh", "steps" : 43566], ["image" : "default-profile.png", "name" : "Danny", "steps" : 25432], ["image" : "default-profile.png", "name" : "Jake", "steps" : 8345], ["image" : "default-profile.png", "name" : "Zack", "steps" : 8965], ["image" : "default-profile.png", "name" : "Jake", "steps" : 9865], ["image" : "default-profile.png", "name" : "Randy", "steps" : 6745]]
+    var team : NSArray = [["image" : "default-profile.png", "name" : "Alex", "steps" : 9385], ["image" : "default-profile.png", "name" : "Josh", "steps" : 2844], ["image" : "default-profile.png", "name" : "Danny", "steps" : 7612], ["image" : "default-profile.png", "name" : "Dale", "steps" : 9385], ["image" : "default-profile.png", "name" : "Tyten", "steps" : 9385], ["image" : "default-profile.png", "name" : "Amanda", "steps" : 8201], ["image" : "default-profile.png", "name" : "George", "steps" : 6745], ["image" : "default-profile.png", "name" : "Brittany", "steps" : 7331], ["image" : "default-profile.png", "name" : "CJ", "steps" : 3038], ["image" : "default-profile.png", "name" : "Ty", "steps" : 2009], ["image" : "default-profile.png", "name" : "Cate", "steps" : 3011] ]
     
     
     
@@ -33,6 +33,12 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // adjust table view contents to appropiately space the table head
         // and section under the team name and segemented control
         self.teamTableView.contentInset = UIEdgeInsetsMake(-25.0, 0.0, 0.0, 0.0)
+        
+        // sort the team array alphabetically on first load to correspond to the initial state
+        // of the segmented control
+        let alphabeticalDescriptors = NSSortDescriptor(key: "name", ascending: true)
+        team = team.sortedArrayUsingDescriptors([alphabeticalDescriptors])
+
 
     }
     
@@ -46,6 +52,32 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func sortTeamTableBy(sender: UISegmentedControl) {
+        
+        let alphabeticalDescriptors = NSSortDescriptor(key: "name", ascending: true)
+                
+        if(sender.selectedSegmentIndex == 0){
+            
+            team = team.sortedArrayUsingDescriptors([alphabeticalDescriptors])
+            
+        } else if(sender.selectedSegmentIndex == 1) {
+            
+            let mostSteps = NSSortDescriptor(key: "steps", ascending: false)
+            
+            team = team.sortedArrayUsingDescriptors([mostSteps, alphabeticalDescriptors])
+            
+        } else if(sender.selectedSegmentIndex == 2) {
+            
+            let mostSteps = NSSortDescriptor(key: "steps", ascending: true)
+            
+            team = team.sortedArrayUsingDescriptors([mostSteps, alphabeticalDescriptors])
+            
+        }
+        
+        teamTableView.reloadData()
+        
+    }
+
 
     /*
     // MARK: - Navigation
