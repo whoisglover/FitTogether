@@ -24,6 +24,8 @@
 		B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B025609A1A2E46440047E563 /* LaunchScreen.xib */; };
 		B02560A21A2E48020047E563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A713541A0C6FD40061A751 /* AppDelegate.swift */; };
 		B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02560A51A2E54080047E563 /* SettingsTableViewController.swift */; };
+		B06EED9D1A36ACF100C9EBB6 /* TeamsToChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06EED9C1A36ACF100C9EBB6 /* TeamsToChallengeTableViewController.swift */; };
+		B06EED9F1A36AD0C00C9EBB6 /* CreateChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06EED9E1A36AD0C00C9EBB6 /* CreateChallengeTableViewController.swift */; };
 		B0ED14901A2D67E500A972EC /* TeammateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		B025609B1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B025609D1A2E46440047E563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B02560A51A2E54080047E563 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		B06EED9C1A36ACF100C9EBB6 /* TeamsToChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsToChallengeTableViewController.swift; sourceTree = "<group>"; };
+		B06EED9E1A36AD0C00C9EBB6 /* CreateChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateChallengeTableViewController.swift; path = ../CreateChallengeTableViewController.swift; sourceTree = "<group>"; };
 		B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +94,8 @@
 			children = (
 				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
 				B025609C1A2E46440047E563 /* Main.storyboard */,
+				B06EED9E1A36AD0C00C9EBB6 /* CreateChallengeTableViewController.swift */,
+				B06EED9C1A36ACF100C9EBB6 /* TeamsToChallengeTableViewController.swift */,
 				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
 				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
@@ -222,7 +228,9 @@
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
 				B022AA2D1A3526BE003A7FD7 /* logInViewController.swift in Sources */,
 				03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */,
+				B06EED9F1A36AD0C00C9EBB6 /* CreateChallengeTableViewController.swift in Sources */,
 				B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */,
+				B06EED9D1A36ACF100C9EBB6 /* TeamsToChallengeTableViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
 				039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */,
 				03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */,
