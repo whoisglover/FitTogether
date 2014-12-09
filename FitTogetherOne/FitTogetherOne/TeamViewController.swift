@@ -55,7 +55,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func sortTeamTableBy(sender: UISegmentedControl) {
         
         let alphabeticalDescriptors = NSSortDescriptor(key: "name", ascending: true)
-        
+                
         if(sender.selectedSegmentIndex == 0){
             
             team = team.sortedArrayUsingDescriptors([alphabeticalDescriptors])
