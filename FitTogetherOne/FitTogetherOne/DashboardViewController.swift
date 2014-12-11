@@ -13,8 +13,8 @@ class DashboardViewController: UITableViewController {
     // MARK: PROPERTIES & OUTLETS
     @IBOutlet weak var dashboardTable: UITableView!
     @IBOutlet weak var walkedTodayMeterView: WalkedTodayMeterView!
-    
-    
+    @IBOutlet weak var stepsWalkedToday: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,24 +47,34 @@ class DashboardViewController: UITableViewController {
         
         let meter = CAShapeLayer()
         let progress = CAShapeLayer()
+        //let shadow = CAShapeLayer()
         
         // Customize the appearance of the shape layer
         meter.fillColor = UIColor.clearColor().CGColor
-        meter.strokeColor = UIColor.grayColor().CGColor
+        meter.strokeColor = UIColor.lightGrayColor().CGColor
         meter.lineWidth = 40.0
         
+//        shadow.fillColor = UIColor.clearColor().CGColor
+//        shadow.strokeColor = UIColor.darkGrayColor().CGColor
+//        shadow.lineWidth = 40.0
+        
         // Make a rect to draw our shape in
-        let rect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.85)), (screenSize.width * 0.7), (screenSize.height * 0.7))
+        let meterRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.85)), (screenSize.width * 0.7), (screenSize.height * 0.7))
+//        let shadowRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)) + 6, ((screenSize.width)-(screenSize.width * 0.85)) + 3, (screenSize.width * 0.7), (screenSize.width * 0.7))
+        
         
         // Set the path for the shape layer
-        meter.path = UIBezierPath(ovalInRect: rect).CGPath
+        meter.path = UIBezierPath(ovalInRect: meterRect).CGPath
+//        shadow.path = UIBezierPath(ovalInRect: shadowRect).CGPath
+
         
         // Add the shape layer as a sub layer of our view
+//        walkedTodayMeterView.layer.addSublayer(shadow)
         walkedTodayMeterView.layer.addSublayer(meter)
         
         // Inner arc
         let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.0))
-        let arcRadius : CGFloat = (rect.width / 2.0)
+        let arcRadius : CGFloat = (meterRect.width / 2.0)
         let startAngle : CGFloat = CGFloat((3 * M_PI) / 2.0)
         let endAngle : CGFloat = CGFloat(M_PI)
         
@@ -75,14 +85,15 @@ class DashboardViewController: UITableViewController {
         walkedTodayMeterView.layer.addSublayer(progress)
         
         // Animate the shape change
-        let duration = NSNumber(float: 2.0)
         var newAnimation = CABasicAnimation(keyPath: "strokeEnd")
         newAnimation.fromValue = NSNumber(float: 0.0)
         newAnimation.toValue = NSNumber(float: 1.0)
-        newAnimation.duration = 2.7
+        newAnimation.duration = 3.7
         newAnimation.delegate = self
         newAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         progress.addAnimation(newAnimation, forKey: "strokeEnd Animation")
+        
+        
         
     }
     
