@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "dashboard_blue44x44.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "dashboard_blue44x44-2.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "dashboard_grey.png"
+      "filename" : "dashboard_blue44x44-1.png"
     }
   ],
   "info" : {
