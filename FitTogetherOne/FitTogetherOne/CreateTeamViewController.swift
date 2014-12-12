@@ -81,9 +81,6 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
                     }
                     
                     
-                    
-//
-                    
                     //taken 1 means not taken, able to create a new team in cloudkit with given data
                     if(taken==1){
                         
