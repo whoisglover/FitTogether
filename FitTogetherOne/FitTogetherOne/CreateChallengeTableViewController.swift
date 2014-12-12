@@ -10,6 +10,8 @@ import UIKit
 
 class CreateChallengeTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var teamName: UITableViewCell!
     @IBOutlet weak var durationPicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
     var datePickerIsShowing = false
@@ -28,6 +30,7 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        datePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -167,6 +170,15 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
         //
     }
 
+    func datePickerChanged(datePicker:UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        
+        var strDate = dateFormatter.stringFromDate(datePicker.date)
+        dateLabel.text = strDate
+        
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
