@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTd-0i-2rt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8QT-3w-wbv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -704,7 +704,7 @@
             </objects>
             <point key="canvasLocation" x="1547" y="2067"/>
         </scene>
-        <!--Dashboard-->
+        <!--Dashboard View Controller-->
         <scene sceneID="5Vg-Vm-Hyo">
             <objects>
                 <tableViewController id="rkV-CM-N8n" customClass="DashboardViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
@@ -918,7 +918,7 @@
                             <outlet property="delegate" destination="rkV-CM-N8n" id="SOC-1o-CFY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="B8T-aK-prT"/>
+                    <tabBarItem key="tabBarItem" selectedImage="DashboardIcon" id="B8T-aK-prT"/>
                     <connections>
                         <outlet property="dashboardTable" destination="olK-oe-h75" id="hQL-Gg-Rru"/>
                         <outlet property="stepsWalkedToday" destination="5XV-ZB-EPL" id="agq-aM-5yu"/>
@@ -1280,6 +1280,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="qTd-0i-2rt" kind="show" id="2qo-5d-Efm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fit Together" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD4-cP-f6M">
                                 <rect key="frame" x="200" y="379" width="200" height="43"/>
@@ -1583,6 +1586,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DashboardIcon" width="92" height="92"/>
         <image name="Settings" width="25" height="25"/>
         <image name="logo" width="154" height="205"/>
         <image name="runningMen" width="103" height="146"/>

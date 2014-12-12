@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class CreateTeamViewController: UITableViewController, UITextViewDelegate {
 
@@ -56,21 +57,73 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
             if let validation = validateText() {
                 if validation.result { // text successfully validated. display confirmation and change button text/function
                     savedTeam = savedTeamName
-                    teamName.text = "Team Name: \(savedTeamName)"
-                    teamName.userInteractionEnabled = false
-                    descriptionInput.text = "Description: \(savedDescription)\n\nTeam Code: \(teamShareCode)"
-                    descriptionInput.userInteractionEnabled = false
-                    sender.setTitle(validation.replaceString, forState: UIControlState.Normal)
-                    teamCreateSuccess = true
                     
                     // generate and save team share code
+                    
+                    let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
+                    let teamNamePredicate = NSPredicate(format: "name = %@", savedTeam)
+                    var taken = 0
+                    let teamNameQuery = CKQuery(recordType: "Teams", predicate: teamNamePredicate)
+                    var operation = CKQueryOperation(query: teamNameQuery)
+                    var results1 = []
+                    publicDatabase.performQuery(teamNameQuery, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
+                        results1 = results
+                        if(results1.count == 0){
+                            taken = 1
+                        }else{
+                            taken = 2
+                        };
+                        
+                    })
+                    
+                    while(taken == 0){
+                        //do nothing
+                    }
+                    
+                    
+                    
+//
+                    
+                    //taken 1 means not taken, able to create a new team in cloudkit with given data
+                    if(taken==1){
+                        
+                        //create share code
+                        
+                       let shareCode = randomString()
+                        
+                        
+                        
+                        
+                        
+                        //save team in cloudkit
+                        
+                        
+                        
+                        teamName.text = "Team Name: \(savedTeamName)"
+                        teamName.userInteractionEnabled = false
+                        descriptionInput.text = "Description: \(savedDescription)\n\nTeam Code: \(teamShareCode)"
+                        descriptionInput.userInteractionEnabled = false
+                        sender.setTitle(validation.replaceString, forState: UIControlState.Normal)
+                        teamCreateSuccess = true
+                        createTeamTableView.reloadData()
+
+                    }else{
+                        //taken 2 means it is taken need to return to same view with error
+                        let placeholder = NSAttributedString(string: "Team Name Already in Use", attributes: [NSForegroundColorAttributeName : UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)])
+                        teamName.text = ""
+                        teamName.attributedPlaceholder = placeholder
+                        
+                    }
+                    
+                    
+                    
                     
                     // check if team name already exists, if not then create the team
                     
                     // reload table view data in order to get section header to reload and 
                     // show success message
-                    createTeamTableView.reloadData()
-                    
+
+          
                     // make sure to set the nav bar's back button to popToViewController(TeamViewController):
                     // so that when the back button is pressed, the user does not have the option to create
                     // or join another team and is instead taken to the team list view
@@ -222,6 +275,15 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         }
         
         return ""
+    }
+    
+    func randomString() -> NSString {
+            let alphanumeric : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+            var shareCode = NSMutableString(capacity: 10)
+            for i in 1...10{
+                shareCode.appendFormat("%C", alphanumeric.characterAtIndex(Int(arc4random_uniform(UInt32(alphanumeric.length)))))
+            }
+            return shareCode
     }
     
     /*
