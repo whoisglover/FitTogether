@@ -1436,13 +1436,12 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="iaA-XZ-IBd" kind="show" id="bz9-mm-qjr"/>
+                                    <segue destination="iaA-XZ-IBd" kind="show" identifier="createChallengeSegue" id="bz9-mm-qjr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="7gK-Oq-eGi" id="aHK-v2-du2"/>
-                            <outlet property="delegate" destination="7gK-Oq-eGi" id="eT2-Z2-l0G"/>
                         </connections>
                     </tableView>
                     <connections>
@@ -1571,6 +1570,41 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="OQg-Lf-Bxy">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OQg-Lf-Bxy" id="mzc-0C-1Tf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP2-Ky-sJO">
+                                                    <rect key="frame" x="0.0" y="8" width="600" height="22"/>
+                                                    <color key="backgroundColor" red="0.94509803920000002" green="0.38823529410000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Create Challenge">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UP2-Ky-sJO" secondAttribute="trailing" id="3zx-eb-V2G"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UP2-Ky-sJO" secondAttribute="bottom" id="7JL-BG-l63"/>
+                                                <constraint firstAttribute="centerY" secondItem="UP2-Ky-sJO" secondAttribute="centerY" id="H0j-kf-F49"/>
+                                                <constraint firstItem="UP2-Ky-sJO" firstAttribute="leading" secondItem="mzc-0C-1Tf" secondAttribute="leading" id="P52-9G-ini"/>
+                                                <constraint firstItem="UP2-Ky-sJO" firstAttribute="bottom" secondItem="mzc-0C-1Tf" secondAttribute="bottomMargin" constant="5" id="Rmf-Kk-vAI"/>
+                                                <constraint firstAttribute="centerX" secondItem="UP2-Ky-sJO" secondAttribute="centerX" id="bs7-Pt-kpj"/>
+                                                <constraint firstItem="UP2-Ky-sJO" firstAttribute="top" secondItem="mzc-0C-1Tf" secondAttribute="topMargin" id="nbw-zz-4PR"/>
+                                                <constraint firstItem="UP2-Ky-sJO" firstAttribute="top" secondItem="mzc-0C-1Tf" secondAttribute="topMargin" constant="-5" id="os8-aw-kyG"/>
+                                                <constraint firstItem="UP2-Ky-sJO" firstAttribute="top" secondItem="mzc-0C-1Tf" secondAttribute="topMargin" id="tlk-O9-kU9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UP2-Ky-sJO" secondAttribute="bottom" constant="-5" id="xjS-Vo-aci"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="7JL-BG-l63"/>
+                                                    <exclude reference="nbw-zz-4PR"/>
+                                                    <exclude reference="tlk-O9-kU9"/>
+                                                    <exclude reference="xjS-Vo-aci"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1580,7 +1614,8 @@
                         <outlet property="datePicker" destination="JsF-h0-Is7" id="81j-LB-vEU"/>
                         <outlet property="durationLabel" destination="Lyp-LH-hPe" id="3Eh-lE-Xwl"/>
                         <outlet property="durationPicker" destination="N4o-y6-QxI" id="NCE-WC-tXP"/>
-                        <outlet property="teamName" destination="wTG-yZ-Xdj" id="E3o-xF-npA"/>
+                        <outlet property="teamName" destination="eBv-Zg-KAQ" id="NRG-Fy-Rty"/>
+                        <outlet property="teamNameLabel" destination="eBv-Zg-KAQ" id="YJt-Wh-LEx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLx-ps-zJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
