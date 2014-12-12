@@ -19,8 +19,6 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
     var teamCreateSuccess = false
     var savedTeam = String()
 
-    
-    
 // MARK: BOILERPLATE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +36,12 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // Create team & share team code
     @IBAction func createAndShare(sender: UIButton) {
         
         // clear keyboard
@@ -167,7 +171,7 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         }
     }
     
-    // validates the input text before processessing
+    // Text validation
     func validateText() -> (result: Bool, replaceString: String, field: Int)? {
         
         let team = teamName.text
@@ -208,18 +212,52 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         // passes all verification
         return (true, "Share Code", 3)
     }
-
-     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    
-// MARK: TEXT VIEW METHODS
+    // Dismiss keyboard
     func dismissKeyboard(){
         descriptionInput.resignFirstResponder()
         teamName.resignFirstResponder()
     }
+    
+    // Create 10 character alphanumeric share code
+    func randomString() -> NSString {
+        let alphanumeric : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+        var shareCode = NSMutableString(capacity: 10)
+        for i in 1...10{
+            shareCode.appendFormat("%C", alphanumeric.characterAtIndex(Int(arc4random_uniform(UInt32(alphanumeric.length)))))
+        }
+        return shareCode
+    }
+    
+    // Save new team to CloudKit
+    func saveNewTeamToCloudKit(teamName: String, shareCode: String, description: String) {
+        
+        // public database
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        
+        // create teamID and teamRecord
+        let teamID = CKRecordID(recordName: "insert iCloud userID of creator here")
+        let teamRecord = CKRecord(recordType: "Teams", recordID: teamID)
+        
+        // set attributes for record
+        teamRecord.setObject(teamName, forKey: "name")
+        teamRecord.setObject(description, forKey: "description")
+        teamRecord.setObject(shareCode, forKey: "shareCode")
+        teamRecord.setObject("oriyentel", forKey: "admin") // get current user name
+        
+        // save record to cloudKit
+        publicDB.saveRecord(teamRecord, completionHandler: { (savedTeam: CKRecord!, error) -> Void in
+            if(error == nil) {
+                println("TEAM SAVED!")
+            } else {
+                println(error.description)
+            }
+        })
+        
+        
+    }
+    
+// MARK: TEXT VIEW METHODS
     
     func textViewDidEndEditing(textView: UITextView) {
         if (textView.text == "") {
@@ -268,79 +306,4 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         return ""
     }
     
-    func randomString() -> NSString {
-            let alphanumeric : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-            var shareCode = NSMutableString(capacity: 10)
-            for i in 1...10{
-                shareCode.appendFormat("%C", alphanumeric.characterAtIndex(Int(arc4random_uniform(UInt32(alphanumeric.length)))))
-            }
-            return shareCode
-    }
-    
-    func saveNewTeamToCloudKit(teamName: String, shareCode: String, description: String) {
-        
-        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
-        
-        
-        
-        
-        
-        
-    }
-    
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
