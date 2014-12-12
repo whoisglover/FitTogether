@@ -279,7 +279,9 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
     
     func saveNewTeamToCloudKit(teamName: String, shareCode: String, description: String) {
         
-        let publicDatabase = CKContainer()
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        
+        
         
         
         
