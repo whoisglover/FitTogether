@@ -15,7 +15,7 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var teamName: UITextField!
     @IBOutlet weak var descriptionInput: UITextView!
     @IBOutlet var createTeamTableView: UITableView!
-    var teamShareCode : Int = 1234567890
+    var teamShareCode : String = ""
     var teamCreateSuccess = false
     var savedTeam = String()
 
@@ -58,54 +58,48 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
                 if validation.result { // text successfully validated. display confirmation and change button text/function
                     savedTeam = savedTeamName
                     
-                    // generate and save team share code
-                    
+                    // generate request to check for existing team name
                     let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
                     let teamNamePredicate = NSPredicate(format: "name = %@", savedTeam)
                     var taken = 0
                     let teamNameQuery = CKQuery(recordType: "Teams", predicate: teamNamePredicate)
                     var operation = CKQueryOperation(query: teamNameQuery)
-                    var results1 = []
-                    publicDatabase.performQuery(teamNameQuery, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
-                        results1 = results
-                        if(results1.count == 0){
-                            taken = 1
+                    var results = []
+                    
+                    // perform team name uniqueness query
+                    publicDatabase.performQuery(teamNameQuery, inZoneWithID: nil, completionHandler: { (returnRecords, error) -> Void in
+                        results = returnRecords
+                        if(results.count == 0){
+                            taken = 1 // team name already exists
                         }else{
-                            taken = 2
+                            taken = 2 // team name is unique
                         };
-                        
                     })
                     
+                    // wait for results to return
                     while(taken == 0){
                         //do nothing
                     }
                     
                     
-                    //taken 1 means not taken, able to create a new team in cloudkit with given data
+                    // able to create a new team in cloudkit with given data
                     if(taken==1){
                         
                         //create share code
-                        
-                       let shareCode = randomString()
-                        
-                        
-                        
-                        
-                        
-                        //save team in cloudkit
-                        
-                        
+                        let teamShareCode = randomString()
                         
                         teamName.text = "Team Name: \(savedTeamName)"
                         teamName.userInteractionEnabled = false
                         descriptionInput.text = "Description: \(savedDescription)\n\nTeam Code: \(teamShareCode)"
                         descriptionInput.userInteractionEnabled = false
                         sender.setTitle(validation.replaceString, forState: UIControlState.Normal)
-                        teamCreateSuccess = true
+                        teamCreateSuccess = true // sets header label on table reload
                         createTeamTableView.reloadData()
+                        
+                        // save team in cloudkit
+                        self.saveNewTeamToCloudKit(savedTeamName, shareCode: teamShareCode, description: savedDescription)
 
-                    }else{
-                        //taken 2 means it is taken need to return to same view with error
+                    }else{ // name is taken need to return to same view with error
                         let placeholder = NSAttributedString(string: "Team Name Already in Use", attributes: [NSForegroundColorAttributeName : UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)])
                         teamName.text = ""
                         teamName.attributedPlaceholder = placeholder
@@ -281,6 +275,15 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
                 shareCode.appendFormat("%C", alphanumeric.characterAtIndex(Int(arc4random_uniform(UInt32(alphanumeric.length)))))
             }
             return shareCode
+    }
+    
+    func saveNewTeamToCloudKit(teamName: String, shareCode: String, description: String) {
+        
+        let publicDatabase = CKContainer()
+        
+        
+        
+        
     }
     
     /*
