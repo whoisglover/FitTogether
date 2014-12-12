@@ -10,6 +10,7 @@ import UIKit
 
 class CreateChallengeTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var teamName: UITableViewCell!
     @IBOutlet weak var durationPicker: UIPickerView!
@@ -30,9 +31,17 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        datePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+//        datePicker.addTarget(self, action:
+    }
+    
+    @IBAction func datePicker(Picker: UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        var dateStr = dateFormatter.stringFromDate(datePicker.date)
+        dateLabel.text = dateStr
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -163,22 +172,15 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        durationLabel.text = durationPickerData[row]
         return durationPickerData[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //
     }
+    
 
-    func datePickerChanged(datePicker:UIDatePicker) {
-        var dateFormatter = NSDateFormatter()
-
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        
-        var strDate = dateFormatter.stringFromDate(datePicker.date)
-        dateLabel.text = strDate
-        
-    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell

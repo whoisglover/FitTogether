@@ -1517,6 +1517,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="439791041.29408503">
                                                         <!--2014-12-09 04:10:41 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="datePicker:" destination="iaA-XZ-IBd" eventType="valueChanged" id="gAd-aa-cfP"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -1575,6 +1578,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="t1r-rO-s8f" id="Wsi-1c-LE7"/>
                         <outlet property="datePicker" destination="JsF-h0-Is7" id="81j-LB-vEU"/>
+                        <outlet property="durationLabel" destination="Lyp-LH-hPe" id="3Eh-lE-Xwl"/>
                         <outlet property="durationPicker" destination="N4o-y6-QxI" id="NCE-WC-tXP"/>
                         <outlet property="teamName" destination="wTG-yZ-Xdj" id="E3o-xF-npA"/>
                     </connections>
