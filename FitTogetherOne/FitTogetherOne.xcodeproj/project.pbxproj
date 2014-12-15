@@ -25,7 +25,6 @@
 		03DF72DA1A3E785C0056E7F6 /* FTTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF72D91A3E785C0056E7F6 /* FTTeam.swift */; };
 		03DF72DC1A3E78670056E7F6 /* FTChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF72DB1A3E78670056E7F6 /* FTChallenge.swift */; };
 		03DF72DE1A3E79870056E7F6 /* FTDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF72DD1A3E79870056E7F6 /* FTDaily.swift */; };
-		26170C1D1A34E4E000DA2C04 /* CloudKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26170C1B1A34E4E000DA2C04 /* CloudKitInterface.swift */; };
 		26170C1E1A34E4E000DA2C04 /* HealthKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26170C1C1A34E4E000DA2C04 /* HealthKitInterface.swift */; };
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		268C90511A353FB600C94DD1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268C90501A353FB600C94DD1 /* SplashScreenViewController.swift */; };
@@ -57,7 +56,6 @@
 		03DF72D91A3E785C0056E7F6 /* FTTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTeam.swift; sourceTree = "<group>"; };
 		03DF72DB1A3E78670056E7F6 /* FTChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChallenge.swift; sourceTree = "<group>"; };
 		03DF72DD1A3E79870056E7F6 /* FTDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDaily.swift; sourceTree = "<group>"; };
-		26170C1B1A34E4E000DA2C04 /* CloudKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitInterface.swift; sourceTree = "<group>"; };
 		26170C1C1A34E4E000DA2C04 /* HealthKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitInterface.swift; sourceTree = "<group>"; };
 		262EB7091A1AE6C800C4602D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		268C90501A353FB600C94DD1 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +89,6 @@
 		033A5FE51A3455810092B694 /* Root Structure */ = {
 			isa = PBXGroup;
 			children = (
-				039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */,
-				039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */,
 			);
 			name = "Root Structure";
 			sourceTree = "<group>";
@@ -110,8 +106,6 @@
 		033A5FE71A3456270092B694 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
-				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -119,11 +113,6 @@
 		033A5FE81A34565D0092B694 /* Team */ = {
 			isa = PBXGroup;
 			children = (
-				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,
-				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
-				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
-				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
-				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -131,7 +120,6 @@
 		033A5FE91A3456B80092B694 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				03CBA5951A2534D700309AD6 /* ProfileViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -141,8 +129,6 @@
 			children = (
 				032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */,
 				032AAF6C1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift */,
-				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
-				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
 				033A5FE31A34555C0092B694 /* FTNotifications.swift */,
 			);
 			name = "Settings & Classes";
@@ -184,25 +170,20 @@
 				030305E31A36D4D90035AD6F /* Main.storyboard */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				034A68E91A3A9E290043BF3F /* CloudKitInterface.swift */,
+				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				03DF72D81A3E783B0056E7F6 /* DataModel */,
 				033A5FE61A3455FB0092B694 /* Main Tabs */,
 				033A5FEA1A3456F90092B694 /* Settings & Classes */,
 				033A5FE51A3455810092B694 /* Root Structure */,
 				26A713521A0C6FD40061A751 /* Supporting Files */,
-				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
-				B025609C1A2E46440047E563 /* Main.storyboard */,
-				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				268C90501A353FB600C94DD1 /* SplashScreenViewController.swift */,
-				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
 				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
 				033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */,
 				03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */,
 				03D35D891A3261EA00BD0546 /* DashboardViewController.swift */,
 				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
-				26170C1B1A34E4E000DA2C04 /* CloudKitInterface.swift */,
 				26170C1C1A34E4E000DA2C04 /* HealthKitInterface.swift */,
-				26170C1F1A34E50A00DA2C04 /* FTUser.swift */,
 				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
 				039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */,
 				039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */,
@@ -331,7 +312,6 @@
 				033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */,
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
 				26170C1E1A34E4E000DA2C04 /* HealthKitInterface.swift in Sources */,
-				26170C1D1A34E4E000DA2C04 /* CloudKitInterface.swift in Sources */,
 				B022AA2D1A3526BE003A7FD7 /* logInViewController.swift in Sources */,
 				03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */,
 				032AAF6D1A36DE8B0079A659 /* CreateChallengeTableViewController.swift in Sources */,

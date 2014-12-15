@@ -15,6 +15,8 @@ class CloudKitInterface: NSObject {
     let container : CKContainer?
     let publicDB : CKDatabase?
     var userID : String?
+    
+    
     override init() {
         super.init()
         
@@ -24,6 +26,143 @@ class CloudKitInterface: NSObject {
     
     }
     
+    class func checkUniqueUsername(username: String) -> Bool {
+        
+        var isUnique = false
+        var returned = false
+        
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        
+        let usernamePredicate = NSPredicate(format: "name = %@", username)
+        let uniqueNameQuery = CKQuery(recordType: "User", predicate: usernamePredicate)
+        
+        publicDB.performQuery(uniqueNameQuery, inZoneWithID: nil) { (records, error) -> Void in
+            
+            if (error != nil) {
+                println("unique username check went wrong")
+                println(error.localizedDescription)
+            }
+            
+            if (records.count == 0) {
+                isUnique = true
+            }
+            
+            returned = true
+            
+        }
+        
+        while (!returned) {
+            // do nothing
+        }
+        
+        return isUnique
+    }
+    
+    class func createUser(user: FTUser) -> CKRecord {
+        
+        // create db and record to save
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        var userRecordToReturn = CKRecord(recordType: "User", recordID: user.recordID)
+        var returned = false
+        
+        // set attributes
+        userRecordToReturn.setObject(user.username as String, forKey: "name")
+        userRecordToReturn.setObject(5000, forKey: "daily_goal")
+        userRecordToReturn.setObject([0, 0, 0, 0, 0], forKey: "badges")
+        userRecordToReturn.setObject(user.cloudKitID, forKey: "cloudKitID")
+        
+        // save record to cloudkit
+        publicDB.saveRecord(userRecordToReturn, completionHandler: { (record, error) -> Void in
+            
+            if (error != nil) {
+                println("error saving new user")
+                println(error.localizedDescription)
+            }
+            
+            if (record != nil) {
+                println("saved new user")
+                println(record.description)
+                userRecordToReturn = record
+            }
+            
+            returned = true
+            
+        })
+        
+        while (!returned) {
+            // do nothing
+        }
+        
+        return userRecordToReturn
+    }
+    
+    class func fetchDailies(username: String) -> [CKRecord]{
+        
+        var dailiesToReturn = [CKRecord]()
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        let userNamePredicate = NSPredicate(format: "user = %@", username)
+        var returned = false
+        
+        let dailyQuery = CKQuery(recordType: "Dailys", predicate: userNamePredicate)
+        
+        publicDB.performQuery(dailyQuery, inZoneWithID: nil) { (returnedRecords, error) -> Void in
+            
+            if (error != nil) {
+                println("error fetching dailies")
+            }
+            
+            if (returnedRecords != nil) {
+                dailiesToReturn = returnedRecords as [CKRecord]
+                println("we got dem dailies")
+            }
+
+            returned = true
+
+        }
+        
+        while (!returned) {
+            // do nothing
+        }
+
+        
+        return dailiesToReturn
+    }
+    
+    class func checkExistingUser(recordID: String) -> CKRecord? {
+        
+        var recordToReturn : CKRecord?
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        var returned = false
+
+        
+        let recordIDPredicate = NSPredicate(format: "cloudKitID = %@", recordID)
+        let userQuery = CKQuery(recordType: "User", predicate: recordIDPredicate)
+        
+        publicDB.performQuery(userQuery, inZoneWithID: nil) { (record, error) -> Void in
+            
+            if (error != nil ) {
+                println("something went wrong when fetching user record based off of ID")
+                println(error.localizedDescription)
+            }
+    
+            if (record.count != 0) {
+                recordToReturn = record[0] as? CKRecord
+            } else {
+                recordToReturn = nil
+            }
+                
+            returned = true
+        }
+
+        
+        // wait for async call to return
+        while (!returned) {
+            // do nothing
+        }
+        
+
+        return recordToReturn
+    }
     
     class func fetchUserID() -> (isLoggedIn: Bool, value: String)? {
         var container : CKContainer?
@@ -67,20 +206,7 @@ class CloudKitInterface: NSObject {
 //        return (false, "test")
         return (loggedIn!, userID ?? errorMessage!)
     }
-    //        let userID = CKRecordID(recordName: "testTest37")
-    //        let userRecord = CKRecord(recordType: "User", recordID: userID)
-    //        userRecord.setObject("oriyentel", forKey: "name")
-    //        userRecord.setObject("random team name", forKey: "team")
-    //        userRecord.setObject(37000, forKey: "daily_goal")
-    //
-    //
-    //        publicDB.saveRecord(userRecord, completionHandler: { (savedUser: CKRecord!, error) -> Void in
-    //            if(error == nil){
-    //                println("SUCCESS")
-    //            } else {
-    //                println(error)
-    //            }
-    //        })
+
     
    
     

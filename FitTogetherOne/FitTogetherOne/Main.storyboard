@@ -257,7 +257,7 @@
         <!--Root Navigation View Controller-->
         <scene sceneID="bEA-dt-XbB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTd-0i-2rt" customClass="RootNavigationViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootNav" automaticallyAdjustsScrollViewInsets="NO" id="qTd-0i-2rt" customClass="RootNavigationViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kVm-q6-JlQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -704,10 +704,10 @@
             </objects>
             <point key="canvasLocation" x="1547" y="2067"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Dashboard-->
         <scene sceneID="5Vg-Vm-Hyo">
             <objects>
-                <tableViewController id="rkV-CM-N8n" customClass="DashboardViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Dashboard" id="rkV-CM-N8n" customClass="DashboardViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="olK-oe-h75">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1281,7 +1281,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qTd-0i-2rt" kind="show" id="2qo-5d-Efm"/>
+                                    <action selector="createUser:" destination="8QT-3w-wbv" eventType="touchUpInside" id="tQr-NP-J7C"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fit Together" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD4-cP-f6M">
@@ -1402,6 +1402,7 @@
                     </view>
                     <connections>
                         <outlet property="userName" destination="y8r-9j-hQE" id="m1q-1X-BYG"/>
+                        <segue destination="qTd-0i-2rt" kind="show" identifier="loggedIn" id="hPH-v0-UCd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEF-Pq-Ubg" userLabel="First Responder" sceneMemberID="firstResponder"/>

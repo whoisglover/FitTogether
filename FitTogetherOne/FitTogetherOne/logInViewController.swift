@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CloudKit
 
 class logInViewController: UIViewController {
     
+    
     let delegate = UIApplication.sharedApplication().delegate as AppDelegate
     @IBOutlet weak var userName: UITextField!
-    var userRecordID:String?
+    var user = FTUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,33 @@ class logInViewController: UIViewController {
         println("inside of loginViewController and the userData model has this record id:   ")
         var tapDismiss = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tapDismiss)
+        
+        // set user
+        self.user = delegate.getUserData()
+    }
+    
+    @IBAction func createUser(sender: AnyObject) {
+        
+        let errorPlaceholder = NSAttributedString(string: "Username already in use.", attributes: [NSForegroundColorAttributeName : UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)])
+        let name = userName.text
+        
+        var isUnique : Bool = CloudKitInterface.checkUniqueUsername(name)
+        
+        // check for username uniqueness
+        if (isUnique) {
+            // save user record to cloudkit
+            user.username = name
+            user.recordID = CKRecordID(recordName: name)
+            let returnedRecord = CloudKitInterface.createUser(self.user)
+            
+            self.performSegueWithIdentifier("loggedIn", sender: self)
+            
+        } else if (!isUnique){
+            userName.attributedPlaceholder = errorPlaceholder
+            userName.text = ""
+        }
+        
+        // set user record in data model
         
         
     }
@@ -35,17 +64,6 @@ class logInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func searchForExistingUsername() {
-        
-        // get recordID
-        let userID = delegate.getUserData().recordID
-        
-        // get record from CloudKit if any
-        
-        
-        
-        
-    }
     
 
     /*

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        
         if userID.isLoggedIn == false{
             //println(userID.value)
             println("returned from cloudkitInterface, logged in is false")
@@ -38,19 +40,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // set root
             self.window?.rootViewController = splashScreen
             
-        }else if(NSUserDefaults.standardUserDefaults().objectForKey("userID") == nil) { // user has not logged in before
+        }else { // user has not logged in before
             println("logged in is true value is: \(userID.value)")
-            //check if there is a user in cloudkit where record_id = userID.value
-            //if there is grab the record and fill user data model
-            //if not create a new user record with record_id = userID.value
-            userData.recordID = userID.value
-            let login = storyBoard.instantiateViewControllerWithIdentifier("userLogin") as? logInViewController
+            userData.cloudKitID = userID.value
+
+            let userRecord : CKRecord? = CloudKitInterface.checkExistingUser(userID.value)
             
-            self.window?.rootViewController = login
+            if (userRecord == nil) {
+                self.window?.rootViewController = storyBoard.instantiateViewControllerWithIdentifier("userLogin") as? logInViewController
+            } else {
+                
+                // make the user for data model
+                if (userRecord != nil) {
+                    self.userData = FTUser(record: userRecord!)
+                }
+                
+                self.window?.rootViewController = storyBoard.instantiateViewControllerWithIdentifier("rootNav") as? RootNavigationViewController
+            }
             
-        }else { // user is already logged in
+            
+            
             
         }
+        
+        // user is already logged in
+            
+        
         
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
