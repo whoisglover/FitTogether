@@ -56,10 +56,11 @@ class TeamsToChallengeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         teamName = allTeams[indexPath.row]
+        self.performSegueWithIdentifier("createChallangeSegue", sender: self)
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
         var transferViewController = segue.destinationViewController as CreateChallengeTableViewController
         
         transferViewController.toPass = teamName

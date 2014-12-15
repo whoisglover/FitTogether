@@ -28,6 +28,14 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         teamNameLabel.text = toPass
+        let currentDate = NSDate()
+        datePicker.minimumDate = currentDate
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        var dateStr = dateFormatter.stringFromDate(datePicker.date)
+        dateLabel.text = dateStr
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
