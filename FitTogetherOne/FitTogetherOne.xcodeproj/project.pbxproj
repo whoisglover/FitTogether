@@ -14,6 +14,7 @@
 		033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */; };
 		033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */; };
 		033A5FE41A34555C0092B694 /* FTNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FE31A34555C0092B694 /* FTNotifications.swift */; };
+		034A68EA1A3A9E290043BF3F /* CloudKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A68E91A3A9E290043BF3F /* CloudKitInterface.swift */; };
 		039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */; };
 		039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */; };
 		039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE41A1EDA4500B05871 /* TeamViewController.swift */; };
@@ -38,6 +39,7 @@
 		033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotOnTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FE31A34555C0092B694 /* FTNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTNotifications.swift; sourceTree = "<group>"; };
+		034A68E91A3A9E290043BF3F /* CloudKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitInterface.swift; sourceTree = "<group>"; };
 		039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		039CDAE41A1EDA4500B05871 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,8 @@
 		033A5FEA1A3456F90092B694 /* Settings & Classes */ = {
 			isa = PBXGroup;
 			children = (
+				032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */,
+				032AAF6C1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift */,
 				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
 				033A5FE31A34555C0092B694 /* FTNotifications.swift */,
@@ -154,8 +158,7 @@
 			children = (
 				030305E31A36D4D90035AD6F /* Main.storyboard */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
-				032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */,
-				032AAF6C1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift */,
+				034A68E91A3A9E290043BF3F /* CloudKitInterface.swift */,
 				033A5FE61A3455FB0092B694 /* Main Tabs */,
 				033A5FEA1A3456F90092B694 /* Settings & Classes */,
 				033A5FE51A3455810092B694 /* Root Structure */,
@@ -273,6 +276,7 @@
 			files = (
 				B02560A21A2E48020047E563 /* AppDelegate.swift in Sources */,
 				033A5FE01A3434CF0092B694 /* JoinTeamViewController.swift in Sources */,
+				034A68EA1A3A9E290043BF3F /* CloudKitInterface.swift in Sources */,
 				B0ED14901A2D67E500A972EC /* TeammateTableViewCell.swift in Sources */,
 				03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */,
 				033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */,
