@@ -9,14 +9,15 @@
 import UIKit
 
 class TeamsToChallengeTableViewController: UITableViewController {
-
+    var teamName: String = ""
+    
+    
     
     let allTeams = ["FitTogetherTwo", "Tyten's Terrors", "Dale's Destroyers", "Reuben's Runners", "Run Track Minds", "The Mighty Morphin Flower Arrangers", "Cell-u-Light","Wii Not Fit", "The Cereal Killers", "Bod Squad", "Team Ramrod","Walk the Walk", "Mission Slimpossible", "Waist Watchers", "Thick n Thin" ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -50,6 +51,19 @@ class TeamsToChallengeTableViewController: UITableViewController {
         cell.textLabel?.text = allTeams[indexPath.row]
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        teamName = allTeams[indexPath.row]
+        self.performSegueWithIdentifier("createChallangeSegue", sender: self)
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var transferViewController = segue.destinationViewController as CreateChallengeTableViewController
+        
+        transferViewController.toPass = teamName
     }
 
     /*
@@ -106,5 +120,6 @@ class TeamsToChallengeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

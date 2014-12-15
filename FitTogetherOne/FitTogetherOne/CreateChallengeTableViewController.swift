@@ -8,10 +8,15 @@
 
 import UIKit
 
-class CreateChallengeTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreateChallengeTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource{
 
+    @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var teamName: UITableViewCell!
     @IBOutlet weak var durationPicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    var toPass: String = ""
     var datePickerIsShowing = false
     var durationPickerIsShowing = false
     let datePickerIndex = 2
@@ -22,14 +27,31 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        teamNameLabel.text = toPass
+        let currentDate = NSDate()
+        datePicker.minimumDate = currentDate
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        var dateStr = dateFormatter.stringFromDate(datePicker.date)
+        dateLabel.text = dateStr
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        datePicker.addTarget(self, action:
+    }
+    
+    @IBAction func datePicker(Picker: UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        var dateStr = dateFormatter.stringFromDate(datePicker.date)
+        dateLabel.text = dateStr
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +68,7 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 5
+        return 6
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -161,12 +183,14 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        durationLabel.text = durationPickerData[row]
         return durationPickerData[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //
     }
+}
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -223,4 +247,4 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
     }
     */
 
-}
+
