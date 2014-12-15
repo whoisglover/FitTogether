@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         
-        if userID.isLoggedIn == false{
-            //println(userID.value)
+        if userID.isLoggedIn == false{ // no icloud account
+            
             println("returned from cloudkitInterface, logged in is false")
             let splashScreen = storyBoard.instantiateViewControllerWithIdentifier("splashScreen") as SplashScreenViewController
             
@@ -40,17 +40,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // set root
             self.window?.rootViewController = splashScreen
             
-        }else { // user has not logged in before
-            println("logged in is true value is: \(userID.value)")
+        }else { // icloud account logged in
+            
+            // save user recordID
             userData.cloudKitID = userID.value
 
+            // check if user has already made account
             let userRecord : CKRecord? = CloudKitInterface.checkExistingUser(userID.value)
             
-            if (userRecord == nil) {
+            if (userRecord == nil) { // new user
                 self.window?.rootViewController = storyBoard.instantiateViewControllerWithIdentifier("userLogin") as? logInViewController
-            } else {
+            } else { // returning user, log them in
                 
-                // make the user for data model
                 if (userRecord != nil) {
                     self.userData = FTUser(record: userRecord!)
                 }
@@ -58,14 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = storyBoard.instantiateViewControllerWithIdentifier("rootNav") as? RootNavigationViewController
             }
             
-            
-            
-            
         }
-        
-        // user is already logged in
-            
-        
         
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))

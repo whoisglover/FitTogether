@@ -134,7 +134,6 @@ class CloudKitInterface: NSObject {
         let publicDB = CKContainer.defaultContainer().publicCloudDatabase
         var returned = false
 
-        
         let recordIDPredicate = NSPredicate(format: "cloudKitID = %@", recordID)
         let userQuery = CKQuery(recordType: "User", predicate: recordIDPredicate)
         
@@ -206,8 +205,99 @@ class CloudKitInterface: NSObject {
 //        return (false, "test")
         return (loggedIn!, userID ?? errorMessage!)
     }
-
     
+    class func fetchTeam(teamName: String) -> CKRecord {
+        
+        var teamRecordToReturn : CKRecord?
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        var returned = false
+        
+        let teamNamePredicate = NSPredicate(format: "name = %@", teamName)
+        let teamQuery = CKQuery(recordType: "Teams", predicate: teamNamePredicate)
+        
+        publicDB.performQuery(teamQuery, inZoneWithID: nil) { (record, error) -> Void in
+            
+            if (error != nil) {
+                println("error in team record fetch")
+                println(error.localizedDescription)
+                teamRecordToReturn = nil
+            }
+            
+            if (record.count != 0) {
+                teamRecordToReturn = record[0] as? CKRecord
+            }
+            
+        }
+        
+        return teamRecordToReturn!
+        
+    }
+
+    class func fetchTeamMembers(membersName: [String]) -> [CKRecord] {
+        
+        var teamMembersToReturn = [CKRecord]()
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        
+        // create recordIDs for fetch based on team members name, exclude current user
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let currentUser = delegate.getUserData()
+        var recordIDs = [CKRecordID]()
+        var memberRecords = [CKRecord]()
+        var returned = false
+        for name in membersName {
+            if (name != currentUser.username) {
+                let newRecordID = CKRecordID(recordName: name)
+                recordIDs.append(newRecordID)
+            }
+        }
+        
+        // create fetch operation with recordID
+        let teamFetchOperation = CKFetchRecordsOperation(recordIDs: recordIDs)
+        
+        // add completion handler and per record fetch handler to fetch operation
+        teamFetchOperation.fetchRecordsCompletionBlock = {(records, error) -> Void in
+            println("got all member records")
+            memberRecords.append(currentUser.userRecord)
+            returned = true
+        }
+        
+        teamFetchOperation.perRecordCompletionBlock = {(record, recordID, error) -> Void in
+            
+            if (error != nil) {
+                println("error fetching team member record")
+            }
+            
+            if (record != nil) {
+                memberRecords.append(record)
+                println("got member record")
+            }
+            
+        }
+        
+        // fetch record
+        publicDB.addOperation(teamFetchOperation)
+        
+        while (!returned) {
+            // do nothing
+        }
+        
+        return memberRecords
+    }
+    
+    class func updateUserTeam(teamName: String) {
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let userData = delegate.getUserData()
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        
+        var userRecord = userData.userRecord
+        userRecord.setObject(teamName, forKey: "team")
+        userData.userRecord = userRecord
+        
+        let modifyUserTeam = CKModifyRecordsOperation(recordsToSave: [userRecord], recordIDsToDelete: [])
+        
+        publicDB.addOperation(modifyUserTeam)
+        
+    }
    
     
 // MARK: Methods we need:

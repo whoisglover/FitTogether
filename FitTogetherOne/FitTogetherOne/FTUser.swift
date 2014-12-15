@@ -33,13 +33,26 @@ class FTUser: NSObject {
     }
     
     init(record: CKRecord) {
+        
+        super.init()
+        
         self.username = record.objectForKey("name") as String
         self.recordID = record.recordID
         self.badges = record.objectForKey("badges") as [Int]
+        self.cloudKitID = record.objectForKey("cloudKitID") as String
+        self.userRecord = record
         
         //get daily records
         self.dailies = CloudKitInterface.fetchDailies(self.username)
         
+        // if team attribute is set, get team
+        if (record.objectForKey("team") != nil) {
+            // get the team name
+            let teamName = record.objectForKey("team") as String
+            
+            // get the team record from cloudkit
+            CloudKitInterface.fetchTeam(teamName)
+        }
         
         
     }

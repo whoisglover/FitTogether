@@ -18,6 +18,7 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
     var teamShareCode : String = ""
     var teamCreateSuccess = false
     var savedTeam = String()
+    let delegate = UIApplication.sharedApplication().delegate as AppDelegate
 
 // MARK: BOILERPLATE
     override func viewDidLoad() {
@@ -232,28 +233,50 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
     // Save new team to CloudKit
     func saveNewTeamToCloudKit(teamName: String, shareCode: String, description: String) {
         
+        var userData = delegate.getUserData()
+        var returned = false
+        var success = false
+        
         // public database
         let publicDB = CKContainer.defaultContainer().publicCloudDatabase
         
         // create teamID and teamRecord
-        let teamID = CKRecordID(recordName: "insert iCloud userID of creator here")
-        let teamRecord = CKRecord(recordType: "Teams", recordID: teamID)
+        let teamID = CKRecordID(recordName: teamName)
+        var teamRecord = CKRecord(recordType: "Teams", recordID: teamID)
         
         // set attributes for record
         teamRecord.setObject(teamName, forKey: "name")
         teamRecord.setObject(description, forKey: "description")
         teamRecord.setObject(shareCode, forKey: "shareCode")
-        teamRecord.setObject("oriyentel", forKey: "admin") // get current user name
+        teamRecord.setObject(userData.username, forKey: "admin")
+        teamRecord.setObject(0, forKey: "isChallenged")
+        teamRecord.setObject([userData.username], forKey: "members")
         
         // save record to cloudKit
-        publicDB.saveRecord(teamRecord, completionHandler: { (savedTeam: CKRecord!, error) -> Void in
-            if(error == nil) {
-                println("TEAM SAVED!")
-            } else {
-                println(error.description)
+        publicDB.saveRecord(teamRecord, completionHandler: { (record, error) -> Void in
+            if(error != nil) {
+                println("error saving new team")
+                println(error.localizedDescription)
             }
+            
+            if (record != nil) {
+                teamRecord = record
+                success = true
+            }
+            
+            returned = true
+            
         })
         
+        while (!returned) {
+            // do nothing
+        }
+        
+        if (success) {
+            userData.team = FTTeam(teamRecord: teamRecord)
+            CloudKitInterface.updateUserTeam(teamRecord.objectForKey("name") as String)
+            println(userData)
+        }
         
     }
     

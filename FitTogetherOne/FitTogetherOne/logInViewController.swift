@@ -40,6 +40,7 @@ class logInViewController: UIViewController {
             user.username = name
             user.recordID = CKRecordID(recordName: name)
             let returnedRecord = CloudKitInterface.createUser(self.user)
+            user.userRecord = returnedRecord
             
             self.performSegueWithIdentifier("loggedIn", sender: self)
             
