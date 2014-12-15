@@ -15,12 +15,10 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var teamName: UITextField!
     @IBOutlet weak var descriptionInput: UITextView!
     @IBOutlet var createTeamTableView: UITableView!
-    var teamShareCode : Int = 1234567890
+    var teamShareCode : String = ""
     var teamCreateSuccess = false
     var savedTeam = String()
 
-    
-    
 // MARK: BOILERPLATE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +36,12 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // Create team & share team code
     @IBAction func createAndShare(sender: UIButton) {
         
         // clear keyboard
@@ -58,57 +62,48 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
                 if validation.result { // text successfully validated. display confirmation and change button text/function
                     savedTeam = savedTeamName
                     
-                    // generate and save team share code
-                    
+                    // generate request to check for existing team name
                     let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
                     let teamNamePredicate = NSPredicate(format: "name = %@", savedTeam)
                     var taken = 0
                     let teamNameQuery = CKQuery(recordType: "Teams", predicate: teamNamePredicate)
                     var operation = CKQueryOperation(query: teamNameQuery)
-                    var results1 = []
-                    publicDatabase.performQuery(teamNameQuery, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
-                        results1 = results
-                        if(results1.count == 0){
-                            taken = 1
+                    var results = []
+                    
+                    // perform team name uniqueness query
+                    publicDatabase.performQuery(teamNameQuery, inZoneWithID: nil, completionHandler: { (returnRecords, error) -> Void in
+                        results = returnRecords
+                        if(results.count == 0){
+                            taken = 1 // team name already exists
                         }else{
-                            taken = 2
+                            taken = 2 // team name is unique
                         };
-                        
                     })
                     
+                    // wait for results to return
                     while(taken == 0){
                         //do nothing
                     }
                     
                     
-                    
-//
-                    
-                    //taken 1 means not taken, able to create a new team in cloudkit with given data
+                    // able to create a new team in cloudkit with given data
                     if(taken==1){
                         
                         //create share code
-                        
-                       let shareCode = randomString()
-                        
-                        
-                        
-                        
-                        
-                        //save team in cloudkit
-                        
-                        
+                        let teamShareCode = randomString()
                         
                         teamName.text = "Team Name: \(savedTeamName)"
                         teamName.userInteractionEnabled = false
                         descriptionInput.text = "Description: \(savedDescription)\n\nTeam Code: \(teamShareCode)"
                         descriptionInput.userInteractionEnabled = false
                         sender.setTitle(validation.replaceString, forState: UIControlState.Normal)
-                        teamCreateSuccess = true
+                        teamCreateSuccess = true // sets header label on table reload
                         createTeamTableView.reloadData()
+                        
+                        // save team in cloudkit
+                        self.saveNewTeamToCloudKit(savedTeamName, shareCode: teamShareCode, description: savedDescription)
 
-                    }else{
-                        //taken 2 means it is taken need to return to same view with error
+                    }else{ // name is taken need to return to same view with error
                         let placeholder = NSAttributedString(string: "Team Name Already in Use", attributes: [NSForegroundColorAttributeName : UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)])
                         teamName.text = ""
                         teamName.attributedPlaceholder = placeholder
@@ -176,7 +171,7 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         }
     }
     
-    // validates the input text before processessing
+    // Text validation
     func validateText() -> (result: Bool, replaceString: String, field: Int)? {
         
         let team = teamName.text
@@ -217,18 +212,52 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         // passes all verification
         return (true, "Share Code", 3)
     }
-
-     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    
-// MARK: TEXT VIEW METHODS
+    // Dismiss keyboard
     func dismissKeyboard(){
         descriptionInput.resignFirstResponder()
         teamName.resignFirstResponder()
     }
+    
+    // Create 10 character alphanumeric share code
+    func randomString() -> NSString {
+        let alphanumeric : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+        var shareCode = NSMutableString(capacity: 10)
+        for i in 1...10{
+            shareCode.appendFormat("%C", alphanumeric.characterAtIndex(Int(arc4random_uniform(UInt32(alphanumeric.length)))))
+        }
+        return shareCode
+    }
+    
+    // Save new team to CloudKit
+    func saveNewTeamToCloudKit(teamName: String, shareCode: String, description: String) {
+        
+        // public database
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+        
+        // create teamID and teamRecord
+        let teamID = CKRecordID(recordName: "insert iCloud userID of creator here")
+        let teamRecord = CKRecord(recordType: "Teams", recordID: teamID)
+        
+        // set attributes for record
+        teamRecord.setObject(teamName, forKey: "name")
+        teamRecord.setObject(description, forKey: "description")
+        teamRecord.setObject(shareCode, forKey: "shareCode")
+        teamRecord.setObject("oriyentel", forKey: "admin") // get current user name
+        
+        // save record to cloudKit
+        publicDB.saveRecord(teamRecord, completionHandler: { (savedTeam: CKRecord!, error) -> Void in
+            if(error == nil) {
+                println("TEAM SAVED!")
+            } else {
+                println(error.description)
+            }
+        })
+        
+        
+    }
+    
+// MARK: TEXT VIEW METHODS
     
     func textViewDidEndEditing(textView: UITextView) {
         if (textView.text == "") {
@@ -277,68 +306,4 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         return ""
     }
     
-    func randomString() -> NSString {
-            let alphanumeric : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-            var shareCode = NSMutableString(capacity: 10)
-            for i in 1...10{
-                shareCode.appendFormat("%C", alphanumeric.characterAtIndex(Int(arc4random_uniform(UInt32(alphanumeric.length)))))
-            }
-            return shareCode
-    }
-    
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
