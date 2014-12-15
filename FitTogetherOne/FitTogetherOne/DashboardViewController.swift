@@ -46,7 +46,7 @@ class DashboardViewController: UITableViewController {
         let screenSize : CGRect = UIScreen.mainScreen().bounds
         walkedTodayMeterView.frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.width)
         
-        walkedTodayMeterUpadate(6000, dailyGoal: 10000, screenSize: walkedTodayMeterView.frame)
+        walkedTodayMeterUpdate(Int(todaySteps), dailyGoal: Int(goalSteps), screenSize: walkedTodayMeterView.frame)
         
         let healthKit = HKHealthStore()
         let stepQuantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
@@ -86,9 +86,12 @@ class DashboardViewController: UITableViewController {
         stepsWalkedToday.hidden = false
         setGoalButton.hidden = false
         walkedTodayLabel.hidden = false
+        
     }
     
-    func walkedTodayMeterUpadate(stepsToday: Int, dailyGoal: Int, screenSize: CGRect){
+    
+    
+    func walkedTodayMeterUpdate(stepsToday: Int, dailyGoal: Int, screenSize: CGRect){
         
         let meter = CAShapeLayer()
         let progress = CAShapeLayer()
@@ -193,6 +196,8 @@ class DashboardViewController: UITableViewController {
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         var newSteps = goalPickerData[row]
         setGoalButton.setTitle("Daily Goal: " + newSteps, forState: .Normal)
+
+        
     }
     
     func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

@@ -236,7 +236,7 @@ class CreateTeamViewController: UITableViewController, UITextViewDelegate {
         let publicDB = CKContainer.defaultContainer().publicCloudDatabase
         
         // create teamID and teamRecord
-        let teamID = CKRecordID(recordName: "insert iCloud userID of creator here")
+        let teamID = CKRecordID(recordName: "testID")
         let teamRecord = CKRecord(recordType: "Teams", recordID: teamID)
         
         // set attributes for record
