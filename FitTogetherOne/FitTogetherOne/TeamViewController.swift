@@ -100,7 +100,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("teammate", forIndexPath:indexPath) as TeammateTableViewCell
-        let cellData = team[indexPath.row]
+        let cellData : AnyObject = team[indexPath.row]
         
         cell.name.text = cellData["name"] as? String
         cell.stepsToday.text = (cellData["steps"] as NSNumber!).stringValue
@@ -128,8 +128,62 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return "Steps Today"
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let teamMember = team[indexPath.row] as [String : AnyObject]
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let teamMemberProfile = storyboard.instantiateViewControllerWithIdentifier("profile") as ProfileViewController
+        
+        let teamMemberData : [String : AnyObject] = ["username" : teamMember["name"] as String, "profileImage" : teamMember["image"] as String, "team-name" : teamName.text as String!, "total-steps" : 103849 as Int, "badges" : ["badge1.png", "badge2.png", "badge6.png", "badge11.png"]]
+        
+        teamMemberProfile.testProfileData = teamMemberData
+        
+        self.teamTableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.navigationController?.pushViewController(teamMemberProfile, animated: true)
+        
+        
+    
+    }
+    
 //    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        tableView.headerViewForSection(section)
 //    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

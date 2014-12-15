@@ -16,6 +16,8 @@ class logInViewController: UIViewController {
 
         var tapDismiss = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tapDismiss)
+        
+        
     }
     
     func dismissKeyboard(){

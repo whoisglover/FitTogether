@@ -263,7 +263,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.2196078431372549" green="0.49411764705882355" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.4941176471" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -408,7 +408,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="54c-zP-H98">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="rkV-CM-N8n" kind="relationship" relationship="viewControllers" id="4uF-CH-sRz"/>
@@ -537,7 +537,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Team" id="jQS-3V-vS8"/>
+                    <tabBarItem key="tabBarItem" title="Team" image="TeamIcon" id="jQS-3V-vS8"/>
                     <connections>
                         <outlet property="segmentedControl" destination="zR1-L1-yUM" id="pfc-D6-s7g"/>
                         <outlet property="teamName" destination="TQz-cO-N4L" id="qqx-iE-1GH"/>
@@ -551,7 +551,7 @@
         <!--Profile-->
         <scene sceneID="dGc-5l-kQG">
             <objects>
-                <tableViewController storyboardIdentifier="profile" id="qd3-oM-i6s" customClass="ProfileViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qd3-oM-i6s" customClass="ProfileViewController" customModule="FitTogetherOne" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gHN-DE-ZaE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -689,7 +689,7 @@
                             <outlet property="delegate" destination="qd3-oM-i6s" id="1Oq-wQ-YAP"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Profile" id="upb-NX-Hsk"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileIcon" id="upb-NX-Hsk"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -918,7 +918,7 @@
                             <outlet property="delegate" destination="rkV-CM-N8n" id="SOC-1o-CFY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="B8T-aK-prT"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="DashboardIcon" id="B8T-aK-prT"/>
                     <connections>
                         <outlet property="dashboardTable" destination="olK-oe-h75" id="hQL-Gg-Rru"/>
                         <outlet property="stepsWalkedToday" destination="5XV-ZB-EPL" id="agq-aM-5yu"/>
@@ -1280,6 +1280,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="qTd-0i-2rt" kind="show" id="Ohc-FS-yYa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fit Together" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD4-cP-f6M">
                                 <rect key="frame" x="200" y="379" width="200" height="43"/>
@@ -1583,7 +1586,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DashboardIcon" width="30" height="30"/>
+        <image name="ProfileIcon" width="30" height="30"/>
         <image name="Settings" width="25" height="25"/>
+        <image name="TeamIcon" width="30" height="30"/>
         <image name="logo" width="154" height="205"/>
         <image name="runningMen" width="103" height="146"/>
     </resources>
