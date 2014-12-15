@@ -3,20 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "dashboard_blue44x44.png"
-      "filename" : "electric-7-2.png"
+      "filename" : "circle-user-7-2.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "dashboard_blue44x44-2.png"
-      "filename" : "electric-7-1.png"
+      "filename" : "circle-user-7-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "dashboard_blue44x44-1.png"
-      "filename" : "electric-7.png"
+      "filename" : "circle-user-7.png"
     }
   ],
   "info" : {

@@ -7,28 +7,25 @@
 //
 
 import UIKit
+import CloudKit
 
 class JoinTeamViewController: UITableViewController, UITextViewDelegate {
 
-    
+// MARK: PROPERTIES & OUTLETS
     @IBOutlet weak var teamCode: UITextField!
     @IBOutlet weak var checkTeamCode: UIButton!
     @IBOutlet weak var confirmedTeamCodeDescription: UITextView!
     @IBOutlet weak var joinTeamButton: UIButton!
     var codeCheckSuccess = false
-    let dummyTeamName = "Test Team Alpha"
-    let dummyTeamDescription = "The best team on FitTogether!"
+    var teamToJoinRecord : CKRecord!
+    let teamCodeError = "Incorrect team code. Try again."
     
-    
+
+// MARK: BOILERPLATE
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        // Add gesture to dismiss keyboard
         var tapDismiss = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tapDismiss)
         
@@ -37,23 +34,28 @@ class JoinTeamViewController: UITableViewController, UITextViewDelegate {
         
     }
     
-    // text in the teamCode textfield changed, check length to auto check
-    // the input team code against team codes stored in cloudkit
+    // Team code label text changed
     func textViewDidChange(notification: NSNotification) {
         
+        let shareCode = teamCode.text
+        
         // length is 10, auto check cloudkit team codes
-        if(teamCode.text.utf16Count == 10){
-            if(checkTeamCodeInCloudKit()){
+        if(shareCode.utf16Count == 10){
+            if(checkTeamCodeInCloudKit(shareCode)){ // team with code found
                 
                 // reload table view data to show the second cell
                 // containing the team info
                 self.tableView.reloadData()
                 
                 // disable teamCode editing
-                teamCode.userInteractionEnabled = false
+                // teamCode.userInteractionEnabled = false
+                
+                // extract team info from team record
+                let name : String = teamToJoinRecord.objectForKey("name") as String
+                let description : String = teamToJoinRecord.objectForKey("description") as String
                 
                 // set team info
-                confirmedTeamCodeDescription.text = "Team Name: \(dummyTeamName)\n\nDescription: \(dummyTeamDescription)"
+                confirmedTeamCodeDescription.text = "Team Name: \(name)\n\nDescription: \(description)"
                 
                 // change buttons
                 joinTeamButton.backgroundColor = UIColor(red: 0.839, green: 0.345, blue: 0.310, alpha: 1.00) // tomato
@@ -61,35 +63,118 @@ class JoinTeamViewController: UITableViewController, UITextViewDelegate {
                 checkTeamCode.backgroundColor = UIColor(red: 0.376, green: 0.745, blue: 0.408, alpha: 1.00) // green
                 checkTeamCode.titleLabel?.textAlignment = NSTextAlignment.Center
                 checkTeamCode.setTitle("Go!", forState: UIControlState.Normal)
+            } else { // incorrect team code, try again
+                // create placeholder text and color
+                let placeholder = NSAttributedString(string: teamCodeError, attributes: [NSForegroundColorAttributeName : UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)])
+                
+                // clear team code text
+                teamCode.text = ""
+                
+                // set place holder
+                teamCode.attributedPlaceholder = placeholder
             }
         }
         
     }
     
     // check the input team code against cloudkit team codes
-    func checkTeamCodeInCloudKit() -> Bool{
+    func checkTeamCodeInCloudKit(shareCode: String) -> Bool{
+
+        var returned = false
+        var queryResults = [CKRecord]()
         
-        codeCheckSuccess = true
+        // Public database
+        let publicDB = CKContainer.defaultContainer().publicCloudDatabase
         
-        return true
+        // team code predicate
+        let shareCodePredicate = NSPredicate(format: "shareCode = %@", shareCode)
+        
+        // team code query
+        let teamCodeQuery = CKQuery(recordType: "Teams", predicate: shareCodePredicate)
+        
+        // query team record containing share code
+        publicDB.performQuery(teamCodeQuery, inZoneWithID: nil) { (returnRecords , error) -> Void in
+            
+            if(error == nil) { // query was successful
+                // save any records that were returned
+                queryResults = returnRecords as Array
+                returned = true
+                
+            } else {
+                println(error.description)
+            }
+            
+        }
+        
+        // wait for results to return
+        while(!returned) {
+            // do nothing
+        }
+        
+        if(queryResults.count == 1) {
+            codeCheckSuccess = true
+            teamToJoinRecord = queryResults[0] as CKRecord
+        } else {
+            codeCheckSuccess = false
+        }
+        
+        return codeCheckSuccess
     }
     
+    // Join a team
     @IBAction func joinTeam(sender: AnyObject) {
         
+        // if team to join is set
+        if(teamToJoinRecord != nil) {
+            
+            // add the current user to the team members string array
+            var members : Array = teamToJoinRecord.objectForKey("members") as [NSString]
+            members.append("RamRod") // test user, change this to current user
+            teamToJoinRecord.setObject(members, forKey: "members")
+            
+            // save modified record to CloudKit
+            let publicDB = CKContainer.defaultContainer().publicCloudDatabase
+            let modifyRecord = CKModifyRecordsOperation(recordsToSave: [teamToJoinRecord], recordIDsToDelete: nil)
+            // you can set a completion handler here for the modify operation 
+            // using the 'modifyRecordsCompletionBlock:' variable of CKModifyRecordsOperation
+            
+            // add operation to public database
+            publicDB.addOperation(modifyRecord)
+            
+        }
+        
+        // add code to build the team object for the data model
+        
+        // display success message to user and pop to root view controller
+        let teamName : String = teamToJoinRecord.objectForKey("name") as String
+        let joinTeamSuccess = UIAlertController(title: "Success!", message: "You've joined \(teamName)! Time to pound the pavement.", preferredStyle: UIAlertControllerStyle.Alert)
+        joinTeamSuccess.addAction(UIAlertAction(title: "Let's Go!", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+            self.goToRoot()
+        }))
+        
+        self.presentViewController(joinTeamSuccess, animated: true) { () -> Void in
+            println("SUCCESSFULLY JOINED TEAM")
+        }
+        
     }
     
+    // Pop to root view controller and show the the team view
+    func goToRoot() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    
+    // Dismiss Keyboard
     func dismissKeyboard(){
         teamCode.resignFirstResponder()
     }
     
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+// MARK: TABLE VIEW METHODS
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
@@ -106,59 +191,5 @@ class JoinTeamViewController: UITableViewController, UITextViewDelegate {
         return 1
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
