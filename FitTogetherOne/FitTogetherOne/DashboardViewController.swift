@@ -26,8 +26,8 @@ class DashboardViewController: UITableViewController {
     
     let goalPickerData = ["5000", "6000", "7000", "8000", "9000", "10000", "11000", "12000", "13000", "14000", "15000", "16000", "17000", "18000", "19000", "20000", "21000", "22000", "23000", "24000", "25000", "26000", "27000", "28000", "29000", "30000"]
     
-    var todaySteps : Float = 5000.0
-    var goalSteps : Float = 10000.0
+    var todaySteps : Float = 9108.0
+    var goalSteps : Float = 12000.0
     
     override func viewDidLoad() {
         super.viewDidLoad()

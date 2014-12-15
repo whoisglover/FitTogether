@@ -15,6 +15,25 @@
 		033A5FE21A3434CF0092B694 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */; };
 		033A5FE41A34555C0092B694 /* FTNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A5FE31A34555C0092B694 /* FTNotifications.swift */; };
 		034A68EA1A3A9E290043BF3F /* CloudKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A68E91A3A9E290043BF3F /* CloudKitInterface.swift */; };
+		03657E1D1A3EFE4000099EF6 /* captainamerica.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E0E1A3EFE4000099EF6 /* captainamerica.png */; };
+		03657E1E1A3EFE4000099EF6 /* daredevil.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E0F1A3EFE4000099EF6 /* daredevil.png */; };
+		03657E1F1A3EFE4000099EF6 /* hulk.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E101A3EFE4000099EF6 /* hulk.png */; };
+		03657E201A3EFE4000099EF6 /* humantorch.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E111A3EFE4000099EF6 /* humantorch.png */; };
+		03657E211A3EFE4000099EF6 /* ironman.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E121A3EFE4000099EF6 /* ironman.png */; };
+		03657E221A3EFE4000099EF6 /* loki.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E131A3EFE4000099EF6 /* loki.png */; };
+		03657E231A3EFE4000099EF6 /* magneto.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E141A3EFE4000099EF6 /* magneto.png */; };
+		03657E241A3EFE4000099EF6 /* mystique.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E151A3EFE4000099EF6 /* mystique.png */; };
+		03657E251A3EFE4000099EF6 /* punisher.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E161A3EFE4000099EF6 /* punisher.png */; };
+		03657E261A3EFE4000099EF6 /* spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E171A3EFE4000099EF6 /* spiderman.png */; };
+		03657E271A3EFE4000099EF6 /* starlord.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E181A3EFE4000099EF6 /* starlord.png */; };
+		03657E281A3EFE4000099EF6 /* storm.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E191A3EFE4000099EF6 /* storm.png */; };
+		03657E291A3EFE4000099EF6 /* thing.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E1A1A3EFE4000099EF6 /* thing.png */; };
+		03657E2A1A3EFE4000099EF6 /* thor.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E1B1A3EFE4000099EF6 /* thor.png */; };
+		03657E2B1A3EFE4000099EF6 /* wolverine.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E1C1A3EFE4000099EF6 /* wolverine.png */; };
+		03657E311A3EFFAF00099EF6 /* daily goal .png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E2D1A3EFFAF00099EF6 /* daily goal .png */; };
+		03657E321A3EFFAF00099EF6 /* daily goal 5 times.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E2E1A3EFFAF00099EF6 /* daily goal 5 times.png */; };
+		03657E331A3EFFAF00099EF6 /* team mvp.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E2F1A3EFFAF00099EF6 /* team mvp.png */; };
+		03657E341A3EFFAF00099EF6 /* walked 10000.png in Resources */ = {isa = PBXBuildFile; fileRef = 03657E301A3EFFAF00099EF6 /* walked 10000.png */; };
 		039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */; };
 		039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */; };
 		039CDAE51A1EDA4500B05871 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039CDAE41A1EDA4500B05871 /* TeamViewController.swift */; };
@@ -42,6 +61,25 @@
 		033A5FDF1A3434CF0092B694 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
 		033A5FE31A34555C0092B694 /* FTNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTNotifications.swift; sourceTree = "<group>"; };
 		034A68E91A3A9E290043BF3F /* CloudKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitInterface.swift; sourceTree = "<group>"; };
+		03657E0E1A3EFE4000099EF6 /* captainamerica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captainamerica.png; sourceTree = "<group>"; };
+		03657E0F1A3EFE4000099EF6 /* daredevil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daredevil.png; sourceTree = "<group>"; };
+		03657E101A3EFE4000099EF6 /* hulk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hulk.png; sourceTree = "<group>"; };
+		03657E111A3EFE4000099EF6 /* humantorch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humantorch.png; sourceTree = "<group>"; };
+		03657E121A3EFE4000099EF6 /* ironman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ironman.png; sourceTree = "<group>"; };
+		03657E131A3EFE4000099EF6 /* loki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loki.png; sourceTree = "<group>"; };
+		03657E141A3EFE4000099EF6 /* magneto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magneto.png; sourceTree = "<group>"; };
+		03657E151A3EFE4000099EF6 /* mystique.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mystique.png; sourceTree = "<group>"; };
+		03657E161A3EFE4000099EF6 /* punisher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = punisher.png; sourceTree = "<group>"; };
+		03657E171A3EFE4000099EF6 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spiderman.png; sourceTree = "<group>"; };
+		03657E181A3EFE4000099EF6 /* starlord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starlord.png; sourceTree = "<group>"; };
+		03657E191A3EFE4000099EF6 /* storm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storm.png; sourceTree = "<group>"; };
+		03657E1A1A3EFE4000099EF6 /* thing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thing.png; sourceTree = "<group>"; };
+		03657E1B1A3EFE4000099EF6 /* thor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thor.png; sourceTree = "<group>"; };
+		03657E1C1A3EFE4000099EF6 /* wolverine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wolverine.png; sourceTree = "<group>"; };
+		03657E2D1A3EFFAF00099EF6 /* daily goal .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "daily goal .png"; sourceTree = "<group>"; };
+		03657E2E1A3EFFAF00099EF6 /* daily goal 5 times.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "daily goal 5 times.png"; sourceTree = "<group>"; };
+		03657E2F1A3EFFAF00099EF6 /* team mvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "team mvp.png"; sourceTree = "<group>"; };
+		03657E301A3EFFAF00099EF6 /* walked 10000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walked 10000.png"; sourceTree = "<group>"; };
 		039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		039CDAE41A1EDA4500B05871 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -130,13 +168,44 @@
 		033A5FEA1A3456F90092B694 /* Settings & Classes */ = {
 			isa = PBXGroup;
 			children = (
-				032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */,
-				032AAF6C1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift */,
 				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				B02560A51A2E54080047E563 /* SettingsTableViewController.swift */,
 				033A5FE31A34555C0092B694 /* FTNotifications.swift */,
 			);
 			name = "Settings & Classes";
+			sourceTree = "<group>";
+		};
+		03657DAD1A3EF78400099EF6 /* Team Profile Images */ = {
+			isa = PBXGroup;
+			children = (
+				03657E0E1A3EFE4000099EF6 /* captainamerica.png */,
+				03657E0F1A3EFE4000099EF6 /* daredevil.png */,
+				03657E101A3EFE4000099EF6 /* hulk.png */,
+				03657E111A3EFE4000099EF6 /* humantorch.png */,
+				03657E121A3EFE4000099EF6 /* ironman.png */,
+				03657E131A3EFE4000099EF6 /* loki.png */,
+				03657E141A3EFE4000099EF6 /* magneto.png */,
+				03657E151A3EFE4000099EF6 /* mystique.png */,
+				03657E161A3EFE4000099EF6 /* punisher.png */,
+				03657E171A3EFE4000099EF6 /* spiderman.png */,
+				03657E181A3EFE4000099EF6 /* starlord.png */,
+				03657E191A3EFE4000099EF6 /* storm.png */,
+				03657E1A1A3EFE4000099EF6 /* thing.png */,
+				03657E1B1A3EFE4000099EF6 /* thor.png */,
+				03657E1C1A3EFE4000099EF6 /* wolverine.png */,
+			);
+			name = "Team Profile Images";
+			sourceTree = "<group>";
+		};
+		03657E2C1A3EFF9800099EF6 /* badges */ = {
+			isa = PBXGroup;
+			children = (
+				03657E2D1A3EFFAF00099EF6 /* daily goal .png */,
+				03657E2E1A3EFFAF00099EF6 /* daily goal 5 times.png */,
+				03657E2F1A3EFFAF00099EF6 /* team mvp.png */,
+				03657E301A3EFFAF00099EF6 /* walked 10000.png */,
+			);
+			name = badges;
 			sourceTree = "<group>";
 		};
 		26A713461A0C6FD30061A751 = {
@@ -161,6 +230,8 @@
 		26A713511A0C6FD40061A751 /* FitTogetherOne */ = {
 			isa = PBXGroup;
 			children = (
+				03657E2C1A3EFF9800099EF6 /* badges */,
+				03657DAD1A3EF78400099EF6 /* Team Profile Images */,
 				030305E31A36D4D90035AD6F /* Main.storyboard */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				032AAF6B1A36DE8B0079A659 /* CreateChallengeTableViewController.swift */,
@@ -270,8 +341,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				030305E41A36D4D90035AD6F /* Main.storyboard in Resources */,
+				03657E281A3EFE4000099EF6 /* storm.png in Resources */,
+				03657E341A3EFFAF00099EF6 /* walked 10000.png in Resources */,
+				03657E231A3EFE4000099EF6 /* magneto.png in Resources */,
+				03657E261A3EFE4000099EF6 /* spiderman.png in Resources */,
+				03657E241A3EFE4000099EF6 /* mystique.png in Resources */,
+				03657E1E1A3EFE4000099EF6 /* daredevil.png in Resources */,
+				03657E321A3EFFAF00099EF6 /* daily goal 5 times.png in Resources */,
+				03657E2A1A3EFE4000099EF6 /* thor.png in Resources */,
+				03657E291A3EFE4000099EF6 /* thing.png in Resources */,
+				03657E221A3EFE4000099EF6 /* loki.png in Resources */,
+				03657E211A3EFE4000099EF6 /* ironman.png in Resources */,
+				03657E311A3EFFAF00099EF6 /* daily goal .png in Resources */,
 				26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */,
+				03657E271A3EFE4000099EF6 /* starlord.png in Resources */,
 				B02560A11A2E47520047E563 /* LaunchScreen.xib in Resources */,
+				03657E2B1A3EFE4000099EF6 /* wolverine.png in Resources */,
+				03657E331A3EFFAF00099EF6 /* team mvp.png in Resources */,
+				03657E201A3EFE4000099EF6 /* humantorch.png in Resources */,
+				03657E251A3EFE4000099EF6 /* punisher.png in Resources */,
+				03657E1D1A3EFE4000099EF6 /* captainamerica.png in Resources */,
+				03657E1F1A3EFE4000099EF6 /* hulk.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
