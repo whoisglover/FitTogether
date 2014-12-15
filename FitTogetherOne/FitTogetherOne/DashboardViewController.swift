@@ -26,6 +26,9 @@ class DashboardViewController: UITableViewController {
     
     let goalPickerData = ["5000", "6000", "7000", "8000", "9000", "10000", "11000", "12000", "13000", "14000", "15000", "16000", "17000", "18000", "19000", "20000", "21000", "22000", "23000", "24000", "25000", "26000", "27000", "28000", "29000", "30000"]
     
+    var todaySteps : Float = 5000.0
+    var goalSteps : Float = 10000.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -127,7 +130,11 @@ class DashboardViewController: UITableViewController {
         let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.5))
         let arcRadius : CGFloat = (meterRect.width / 2.0)
         let startAngle : CGFloat = CGFloat((3 * M_PI) / 2.0)
-        let endAngle : CGFloat = CGFloat(M_PI)
+        
+        var percentage : Float = Float(todaySteps / goalSteps) * 360.0
+        var percentageAsRadian : CGFloat = CGFloat(DegreesToRadians(percentage))
+        var endAngle : CGFloat = percentageAsRadian + startAngle
+        //let endAngle : CGFloat = CGFloat(M_PI)
         
         progress.fillColor = UIColor.clearColor().CGColor
         progress.strokeColor = UIColor(red: 0.890, green: 0.357, blue: 0.306, alpha: 1.00).CGColor
