@@ -47,7 +47,7 @@ class DashboardViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         // set the nav bar title for this view
-        self.navigationController?.navigationBar.topItem?.title = "Dashboard"
+      
     }
     
     func walkedTodayMeterUpadate(stepsToday: Int, dailyGoal: Int, screenSize: CGRect){

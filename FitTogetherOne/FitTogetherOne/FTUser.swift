@@ -18,6 +18,7 @@ class FTUser: NSObject {
     var blurb = String()
     var badges = []
     var dailyChallengeSteps = FTDaily()
+
     
     
     override init() {
