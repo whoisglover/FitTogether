@@ -86,6 +86,7 @@ class CreateChallengeTableViewController: UITableViewController, UIPickerViewDel
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        
         if (indexPath.row == 1){
             if ( datePickerIsShowing ){
                 self.hideDatePicker()

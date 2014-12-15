@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class DashboardViewController: UITableViewController {
     
@@ -35,6 +36,12 @@ class DashboardViewController: UITableViewController {
         
         walkedTodayMeterUpadate(6000, dailyGoal: 10000, screenSize: walkedTodayMeterView.frame)
         
+        let healthKit = HKHealthStore()
+        let stepQuantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
+        healthKit.requestAuthorizationToShareTypes(NSSet(array: [stepQuantityType]), readTypes: NSSet(array: [stepQuantityType])) { (success, error) -> Void in
+            println("Requested access to users step count")
+        }
+        
         
     }
     
@@ -47,6 +54,7 @@ class DashboardViewController: UITableViewController {
         
         let meter = CAShapeLayer()
         let progress = CAShapeLayer()
+        //let meterOutline = CAShapeLayer()
         //let shadow = CAShapeLayer()
         
         // Customize the appearance of the shape layer
@@ -54,22 +62,30 @@ class DashboardViewController: UITableViewController {
         meter.strokeColor = UIColor.lightGrayColor().CGColor
         meter.lineWidth = 40.0
         
+//        meterOutline.fillColor = UIColor.clearColor().CGColor
+//        meterOutline.strokeColor = UIColor.blackColor().CGColor
+//        meterOutline.lineWidth = 46.0
+        
+        
 //        shadow.fillColor = UIColor.clearColor().CGColor
 //        shadow.strokeColor = UIColor.darkGrayColor().CGColor
 //        shadow.lineWidth = 40.0
         
         // Make a rect to draw our shape in
         let meterRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.85)), (screenSize.width * 0.7), (screenSize.height * 0.7))
+//        let outlineRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85) - 1.0), ((screenSize.width)-(screenSize.width * 0.85) - 1.0), (screenSize.width * 0.7) + 2.0, (screenSize.height * 0.7) + 2.0)
 //        let shadowRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)) + 6, ((screenSize.width)-(screenSize.width * 0.85)) + 3, (screenSize.width * 0.7), (screenSize.width * 0.7))
         
         
         // Set the path for the shape layer
         meter.path = UIBezierPath(ovalInRect: meterRect).CGPath
+//        meterOutline.path = UIBezierPath(ovalInRect: outlineRect).CGPath
 //        shadow.path = UIBezierPath(ovalInRect: shadowRect).CGPath
 
         
         // Add the shape layer as a sub layer of our view
 //        walkedTodayMeterView.layer.addSublayer(shadow)
+//        walkedTodayMeterView.layer.addSublayer(meterOutline)
         walkedTodayMeterView.layer.addSublayer(meter)
         
         // Inner arc
@@ -79,7 +95,7 @@ class DashboardViewController: UITableViewController {
         let endAngle : CGFloat = CGFloat(M_PI)
         
         progress.fillColor = UIColor.clearColor().CGColor
-        progress.strokeColor = UIColor(red: 0.882, green: 0.353, blue: 0.302, alpha: 1.00).CGColor
+        progress.strokeColor = UIColor(red: 0.890, green: 0.357, blue: 0.306, alpha: 1.00).CGColor
         progress.lineWidth = meter.lineWidth
         progress.path = UIBezierPath(arcCenter: arcCenterPoint, radius: arcRadius, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
         walkedTodayMeterView.layer.addSublayer(progress)
