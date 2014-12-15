@@ -735,10 +735,13 @@
                                         <color key="titleColor" red="0.8862745098" green="0.36862745099999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="updateGoal:" destination="rkV-CM-N8n" eventType="touchUpInside" id="EUC-Wh-8iK"/>
+                                    </connections>
                                 </button>
                                 <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cfw-uV-vzY">
                                     <rect key="frame" x="50" y="176" width="500" height="26"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.35000000000000003" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="5jq-DH-URK"/>
                                     </constraints>
@@ -768,19 +771,49 @@
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opK-25-sCk">
+                                    <rect key="frame" x="208" y="15" width="185" height="162"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="Dve-NO-46M"/>
+                                        <constraint firstAttribute="width" constant="185" id="fQc-WL-s0U"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="dataSource" destination="rkV-CM-N8n" id="h2e-BI-RtX"/>
+                                        <outlet property="delegate" destination="rkV-CM-N8n" id="jfp-TX-EHs"/>
+                                    </connections>
+                                </pickerView>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8C-FA-Gq2">
+                                    <rect key="frame" x="249" y="4" width="103" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="103" id="Qc6-ak-SgP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <state key="normal" title="Accept">
+                                        <color key="titleColor" red="0.89019607840000003" green="0.35686274509999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="confirmGoalButton:" destination="rkV-CM-N8n" eventType="touchUpInside" id="QAh-q0-X00"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="centerX" secondItem="opK-25-sCk" secondAttribute="centerX" id="0va-8A-GIU"/>
                                 <constraint firstItem="aFw-U9-rxw" firstAttribute="top" secondItem="5XV-ZB-EPL" secondAttribute="bottom" constant="8" id="3Tf-19-poX"/>
                                 <constraint firstAttribute="centerX" secondItem="Nld-Fa-n0C" secondAttribute="centerX" constant="-25" id="8jT-fa-pWc"/>
+                                <constraint firstAttribute="centerY" secondItem="opK-25-sCk" secondAttribute="centerY" constant="20" id="Bpz-nJ-6yr"/>
+                                <constraint firstItem="p8C-FA-Gq2" firstAttribute="top" secondItem="bTL-OG-9N7" secondAttribute="top" constant="20" id="EEh-9s-0jD"/>
                                 <constraint firstItem="Cfw-uV-vzY" firstAttribute="leading" secondItem="bTL-OG-9N7" secondAttribute="leading" constant="50" id="Nzb-rq-uPE"/>
                                 <constraint firstAttribute="centerX" secondItem="LAb-fc-RRz" secondAttribute="centerX" id="PM0-eH-thJ"/>
                                 <constraint firstItem="Nld-Fa-n0C" firstAttribute="leading" secondItem="FjH-ML-OiR" secondAttribute="trailing" constant="8" id="SCY-Xv-TLd"/>
                                 <constraint firstAttribute="bottom" secondItem="ELh-pW-Wf0" secondAttribute="bottom" constant="32" id="Yg3-iC-qf7"/>
                                 <constraint firstAttribute="trailing" secondItem="Cfw-uV-vzY" secondAttribute="trailing" constant="50" id="a0f-1W-bhm"/>
                                 <constraint firstAttribute="centerY" secondItem="LAb-fc-RRz" secondAttribute="centerY" constant="20" id="d6C-NT-tV4"/>
+                                <constraint firstItem="opK-25-sCk" firstAttribute="top" secondItem="p8C-FA-Gq2" secondAttribute="bottom" constant="12" id="fvI-T8-f80"/>
                                 <constraint firstAttribute="bottom" secondItem="FjH-ML-OiR" secondAttribute="bottom" constant="32" id="ge6-pf-WKx"/>
                                 <constraint firstItem="LAb-fc-RRz" firstAttribute="centerX" secondItem="5XV-ZB-EPL" secondAttribute="centerX" id="ljL-P2-6tu"/>
+                                <constraint firstAttribute="centerX" secondItem="p8C-FA-Gq2" secondAttribute="centerX" id="m7S-uT-rpG"/>
                                 <constraint firstItem="LAb-fc-RRz" firstAttribute="top" secondItem="5XV-ZB-EPL" secondAttribute="bottom" constant="-8" id="n31-7q-s2H"/>
                                 <constraint firstItem="5XV-ZB-EPL" firstAttribute="top" secondItem="bTL-OG-9N7" secondAttribute="top" constant="30" id="nP5-Nm-oin"/>
                                 <constraint firstItem="FjH-ML-OiR" firstAttribute="leading" secondItem="ELh-pW-Wf0" secondAttribute="trailing" constant="1" id="neI-gO-z4s"/>
@@ -793,6 +826,7 @@
                             <variation key="default">
                                 <mask key="constraints">
                                     <exclude reference="nP5-Nm-oin"/>
+                                    <exclude reference="EEh-9s-0jD"/>
                                 </mask>
                             </variation>
                         </view>
@@ -970,11 +1004,15 @@
                     <tabBarItem key="tabBarItem" title="Dashboard" image="DashboardIcon" id="B8T-aK-prT"/>
                     <connections>
                         <outlet property="competitionProgress" destination="Cfw-uV-vzY" id="xAL-aW-Xoe"/>
+                        <outlet property="confirmGoal" destination="p8C-FA-Gq2" id="HOu-2p-Nqf"/>
                         <outlet property="dashboardTable" destination="olK-oe-h75" id="hQL-Gg-Rru"/>
                         <outlet property="daysCompletedLabel" destination="3xI-WE-HH7" id="tku-7V-03Y"/>
+                        <outlet property="goalPicker" destination="opK-25-sCk" id="I7B-Fx-hpi"/>
                         <outlet property="progressBar" destination="Cfw-uV-vzY" id="ErJ-QL-yxy"/>
+                        <outlet property="setGoalButton" destination="aFw-U9-rxw" id="36J-W0-eAw"/>
                         <outlet property="stepsWalkedToday" destination="5XV-ZB-EPL" id="agq-aM-5yu"/>
                         <outlet property="totalDaysLabel" destination="FjH-ML-OiR" id="s8q-Pf-vwY"/>
+                        <outlet property="walkedTodayLabel" destination="LAb-fc-RRz" id="aEg-tT-t1U"/>
                         <outlet property="walkedTodayMeterView" destination="bTL-OG-9N7" id="QUd-RA-e88"/>
                     </connections>
                 </tableViewController>

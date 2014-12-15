@@ -15,11 +15,16 @@ class DashboardViewController: UITableViewController {
     @IBOutlet weak var dashboardTable: UITableView!
     @IBOutlet weak var walkedTodayMeterView: WalkedTodayMeterView!
     @IBOutlet weak var stepsWalkedToday: UILabel!
+    @IBOutlet weak var walkedTodayLabel: UILabel!
     @IBOutlet weak var competitionProgress: UIProgressView!
     @IBOutlet weak var daysCompletedLabel: UILabel!
     @IBOutlet weak var totalDaysLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-
+    @IBOutlet weak var setGoalButton: UIButton!
+    @IBOutlet weak var goalPicker: UIPickerView!
+    @IBOutlet weak var confirmGoal: UIButton!
+    
+    let goalPickerData = ["5000", "6000", "7000", "8000", "9000", "10000", "11000", "12000", "13000", "14000", "15000", "16000", "17000", "18000", "19000", "20000", "21000", "22000", "23000", "24000", "25000", "26000", "27000", "28000", "29000", "30000"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +66,23 @@ class DashboardViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         // set the nav bar title for this view
         self.navigationController?.navigationBar.topItem?.title = "Dashboard"
+    }
+    
+    @IBAction func updateGoal(sender: AnyObject) {
+        goalPicker.hidden = false
+        confirmGoal.hidden = false
+        stepsWalkedToday.hidden = true
+        setGoalButton.hidden = true
+        walkedTodayLabel.hidden = true        
+        
+    }
+    
+    @IBAction func confirmGoalButton(sender: AnyObject) {
+        goalPicker.hidden = true
+        confirmGoal.hidden = true
+        stepsWalkedToday.hidden = false
+        setGoalButton.hidden = false
+        walkedTodayLabel.hidden = false
     }
     
     func walkedTodayMeterUpadate(stepsToday: Int, dailyGoal: Int, screenSize: CGRect){
@@ -148,6 +170,27 @@ class DashboardViewController: UITableViewController {
         return 3
     }
     
+    // MARK: Duration Picker Delegate Methods
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return goalPickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return goalPickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var newSteps = goalPickerData[row]
+        setGoalButton.setTitle("Daily Goal: " + newSteps, forState: .Normal)
+    }
+    
+    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 38.0
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
