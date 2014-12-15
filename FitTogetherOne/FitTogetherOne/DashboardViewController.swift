@@ -15,7 +15,19 @@ class DashboardViewController: UITableViewController {
     @IBOutlet weak var dashboardTable: UITableView!
     @IBOutlet weak var walkedTodayMeterView: WalkedTodayMeterView!
     @IBOutlet weak var stepsWalkedToday: UILabel!
-
+    @IBOutlet weak var walkedTodayLabel: UILabel!
+    @IBOutlet weak var competitionProgress: UIProgressView!
+    @IBOutlet weak var daysCompletedLabel: UILabel!
+    @IBOutlet weak var totalDaysLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var setGoalButton: UIButton!
+    @IBOutlet weak var goalPicker: UIPickerView!
+    @IBOutlet weak var confirmGoal: UIButton!
+    
+    let goalPickerData = ["5000", "6000", "7000", "8000", "9000", "10000", "11000", "12000", "13000", "14000", "15000", "16000", "17000", "18000", "19000", "20000", "21000", "22000", "23000", "24000", "25000", "26000", "27000", "28000", "29000", "30000"]
+    
+    var todaySteps : Float = 5000.0
+    var goalSteps : Float = 10000.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +54,38 @@ class DashboardViewController: UITableViewController {
             println("Requested access to users step count")
         }
         
+        //set up the competition progress bar
+        let competitionLength = 25 as NSNumber
+        var daysCompleted = 22 as NSNumber
         
+        totalDaysLabel.text = competitionLength.stringValue
+        daysCompletedLabel.text = daysCompleted.stringValue
+        
+        progressBar.progress = daysCompleted.floatValue / competitionLength.floatValue
+        
+        progressBar.layer.cornerRadius = 12.5
     }
     
     override func viewWillAppear(animated: Bool) {
         // set the nav bar title for this view
         self.navigationController?.navigationBar.topItem?.title = "Dashboard"
+    }
+    
+    @IBAction func updateGoal(sender: AnyObject) {
+        goalPicker.hidden = false
+        confirmGoal.hidden = false
+        stepsWalkedToday.hidden = true
+        setGoalButton.hidden = true
+        walkedTodayLabel.hidden = true        
+        
+    }
+    
+    @IBAction func confirmGoalButton(sender: AnyObject) {
+        goalPicker.hidden = true
+        confirmGoal.hidden = true
+        stepsWalkedToday.hidden = false
+        setGoalButton.hidden = false
+        walkedTodayLabel.hidden = false
     }
     
     func walkedTodayMeterUpadate(stepsToday: Int, dailyGoal: Int, screenSize: CGRect){
@@ -72,7 +110,7 @@ class DashboardViewController: UITableViewController {
 //        shadow.lineWidth = 40.0
         
         // Make a rect to draw our shape in
-        let meterRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.85)), (screenSize.width * 0.7), (screenSize.height * 0.7))
+        let meterRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.95)), (screenSize.width * 0.7), (screenSize.height * 0.7))
 //        let outlineRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85) - 1.0), ((screenSize.width)-(screenSize.width * 0.85) - 1.0), (screenSize.width * 0.7) + 2.0, (screenSize.height * 0.7) + 2.0)
 //        let shadowRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)) + 6, ((screenSize.width)-(screenSize.width * 0.85)) + 3, (screenSize.width * 0.7), (screenSize.width * 0.7))
         
@@ -89,10 +127,14 @@ class DashboardViewController: UITableViewController {
         walkedTodayMeterView.layer.addSublayer(meter)
         
         // Inner arc
-        let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.0))
+        let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.5))
         let arcRadius : CGFloat = (meterRect.width / 2.0)
         let startAngle : CGFloat = CGFloat((3 * M_PI) / 2.0)
-        let endAngle : CGFloat = CGFloat(M_PI)
+        
+        var percentage : Float = Float(todaySteps / goalSteps) * 360.0
+        var percentageAsRadian : CGFloat = CGFloat(DegreesToRadians(percentage))
+        var endAngle : CGFloat = percentageAsRadian + startAngle
+        //let endAngle : CGFloat = CGFloat(M_PI)
         
         progress.fillColor = UIColor.clearColor().CGColor
         progress.strokeColor = UIColor(red: 0.890, green: 0.357, blue: 0.306, alpha: 1.00).CGColor
@@ -135,6 +177,27 @@ class DashboardViewController: UITableViewController {
         return 3
     }
     
+    // MARK: Duration Picker Delegate Methods
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return goalPickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return goalPickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var newSteps = goalPickerData[row]
+        setGoalButton.setTitle("Daily Goal: " + newSteps, forState: .Normal)
+    }
+    
+    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 38.0
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
