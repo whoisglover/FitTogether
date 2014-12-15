@@ -10,8 +10,10 @@ import UIKit
 
 class logInViewController: UIViewController {
     
+    let delegate = UIApplication.sharedApplication().delegate as AppDelegate
     @IBOutlet weak var userName: UITextField!
     var userRecordID:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //try to accesss data from app delegate here to get the user record ID
@@ -29,6 +31,18 @@ class logInViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func searchForExistingUsername() {
+        
+        // get recordID
+        let userID = delegate.getUserData().recordID
+        
+        // get record from CloudKit if any
+        
+        
+        
+        
     }
     
 

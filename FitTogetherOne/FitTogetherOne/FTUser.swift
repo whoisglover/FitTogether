@@ -17,7 +17,6 @@ class FTUser: NSObject {
     
     
     override init() {
-        
         super.init()
     }
     

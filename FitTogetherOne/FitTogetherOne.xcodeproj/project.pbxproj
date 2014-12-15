@@ -98,6 +98,8 @@
 			children = (
 				B025609A1A2E46440047E563 /* LaunchScreen.xib */,
 				B025609C1A2E46440047E563 /* Main.storyboard */,
+				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
+				268C90501A353FB600C94DD1 /* SplashScreenViewController.swift */,
 				B022AA2C1A3526BE003A7FD7 /* logInViewController.swift */,
 				033A5FDD1A3434CF0092B694 /* JoinTeamViewController.swift */,
 				033A5FDE1A3434CF0092B694 /* NotOnTeamViewController.swift */,
@@ -109,8 +111,6 @@
 				26170C1C1A34E4E000DA2C04 /* HealthKitInterface.swift */,
 				26170C1F1A34E50A00DA2C04 /* FTUser.swift */,
 				B0ED148F1A2D67E500A972EC /* TeammateTableViewCell.swift */,
-				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
-				268C90501A353FB600C94DD1 /* SplashScreenViewController.swift */,
 				039CDADE1A1ED9FE00B05871 /* RootNavigationViewController.swift */,
 				039CDAE01A1EDA1D00B05871 /* RootTabBarViewController.swift */,
 				039CDAE41A1EDA4500B05871 /* TeamViewController.swift */,

@@ -13,6 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var userData = FTUser()
+    
+    func getUserData() -> FTUser {
+        return userData
+    }
 
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -20,18 +24,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userID : (isLoggedIn: Bool, value: String) = CloudKitInterface.fetchUserID()!
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
         if userID.isLoggedIn == false{
             //println(userID.value)
             println("returned from cloudkitInterface, logged in is false")
-            self.window?.rootViewController = storyBoard.instantiateViewControllerWithIdentifier("splashScreen") as? UIViewController
+            let splashScreen = storyBoard.instantiateViewControllerWithIdentifier("splashScreen") as SplashScreenViewController
             
-        }else {
+            // set alert to show
+            splashScreen.noiCloudAccount()
+            
+            // set root
+            self.window?.rootViewController = splashScreen
+            
+        }else if(NSUserDefaults.standardUserDefaults().objectForKey("userID") == nil) { // user has not logged in before
             println("logged in is true value is: \(userID.value)")
             //check if there is a user in cloudkit where record_id = userID.value
             //if there is grab the record and fill user data model
             //if not create a new user record with record_id = userID.value
             userData.recordID = userID.value
-            self.window?.rootViewController = storyBoard.instantiateViewControllerWithIdentifier("userNameScreen") as? logInViewController
+            let login = storyBoard.instantiateViewControllerWithIdentifier("userLogin") as? logInViewController
+            
+            self.window?.rootViewController = login
+            
+        }else { // user is already logged in
             
         }
         

@@ -10,6 +10,9 @@ import UIKit
 
 class SplashScreenViewController: UIViewController {
 
+    var alertToShow : UIAlertController?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -26,6 +29,18 @@ class SplashScreenViewController: UIViewController {
         self.presentViewController(takeMeToSettings, animated: true, completion: { () -> Void in
             println("just went to settings")
         })
+    }
+    
+    func noiCloudAccount() {
+        
+        let takeMeToSettings = UIAlertController(title: "No Active iCloud Account", message: "Please go to Settings -> iCloud to create or sign in to your iCloud account. You must be logged in to iCloud to use FitTogether.", preferredStyle: UIAlertControllerStyle.Alert)
+        takeMeToSettings.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) -> Void in
+            let icloudURL = NSURL(string: UIApplicationOpenSettingsURLString)
+            UIApplication.sharedApplication().openURL(icloudURL!)
+        }))
+        
+        alertToShow = takeMeToSettings
+        
     }
 
     override func didReceiveMemoryWarning() {
