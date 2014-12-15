@@ -21,6 +21,10 @@
 		03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA5951A2534D700309AD6 /* ProfileViewController.swift */; };
 		03D35D8A1A3261EA00BD0546 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D891A3261EA00BD0546 /* DashboardViewController.swift */; };
 		03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */; };
+		03DF72D71A3E782D0056E7F6 /* FTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF72D61A3E782D0056E7F6 /* FTUser.swift */; };
+		03DF72DA1A3E785C0056E7F6 /* FTTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF72D91A3E785C0056E7F6 /* FTTeam.swift */; };
+		03DF72DC1A3E78670056E7F6 /* FTChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF72DB1A3E78670056E7F6 /* FTChallenge.swift */; };
+		03DF72DE1A3E79870056E7F6 /* FTDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF72DD1A3E79870056E7F6 /* FTDaily.swift */; };
 		262EB70A1A1AE6C800C4602D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262EB7091A1AE6C800C4602D /* HealthKit.framework */; };
 		26A7135C1A0C6FD40061A751 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A7135B1A0C6FD40061A751 /* Images.xcassets */; };
 		26A713761A0C71460061A751 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A713751A0C71460061A751 /* CloudKit.framework */; };
@@ -46,6 +50,10 @@
 		03CBA5951A2534D700309AD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		03D35D891A3261EA00BD0546 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		03D35D8B1A32626800BD0546 /* WalkedTodayMeterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkedTodayMeterView.swift; sourceTree = "<group>"; };
+		03DF72D61A3E782D0056E7F6 /* FTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTUser.swift; sourceTree = "<group>"; };
+		03DF72D91A3E785C0056E7F6 /* FTTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTeam.swift; sourceTree = "<group>"; };
+		03DF72DB1A3E78670056E7F6 /* FTChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTChallenge.swift; sourceTree = "<group>"; };
+		03DF72DD1A3E79870056E7F6 /* FTDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDaily.swift; sourceTree = "<group>"; };
 		262EB7091A1AE6C800C4602D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		26A7134F1A0C6FD40061A751 /* FitTogetherOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTogetherOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A713531A0C6FD40061A751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +142,17 @@
 			name = "Settings & Classes";
 			sourceTree = "<group>";
 		};
+		03DF72D81A3E783B0056E7F6 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				03DF72D61A3E782D0056E7F6 /* FTUser.swift */,
+				03DF72D91A3E785C0056E7F6 /* FTTeam.swift */,
+				03DF72DB1A3E78670056E7F6 /* FTChallenge.swift */,
+				03DF72DD1A3E79870056E7F6 /* FTDaily.swift */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
 		26A713461A0C6FD30061A751 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +178,7 @@
 				030305E31A36D4D90035AD6F /* Main.storyboard */,
 				26A713541A0C6FD40061A751 /* AppDelegate.swift */,
 				034A68E91A3A9E290043BF3F /* CloudKitInterface.swift */,
+				03DF72D81A3E783B0056E7F6 /* DataModel */,
 				033A5FE61A3455FB0092B694 /* Main Tabs */,
 				033A5FEA1A3456F90092B694 /* Settings & Classes */,
 				033A5FE51A3455810092B694 /* Root Structure */,
@@ -275,15 +295,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02560A21A2E48020047E563 /* AppDelegate.swift in Sources */,
+				03DF72DC1A3E78670056E7F6 /* FTChallenge.swift in Sources */,
 				033A5FE01A3434CF0092B694 /* JoinTeamViewController.swift in Sources */,
+				03DF72DE1A3E79870056E7F6 /* FTDaily.swift in Sources */,
 				034A68EA1A3A9E290043BF3F /* CloudKitInterface.swift in Sources */,
 				B0ED14901A2D67E500A972EC /* TeammateTableViewCell.swift in Sources */,
 				03CBA5961A2534D700309AD6 /* ProfileViewController.swift in Sources */,
+				03DF72DA1A3E785C0056E7F6 /* FTTeam.swift in Sources */,
 				033A5FE11A3434CF0092B694 /* NotOnTeamViewController.swift in Sources */,
 				039CDADF1A1ED9FE00B05871 /* RootNavigationViewController.swift in Sources */,
 				B022AA2D1A3526BE003A7FD7 /* logInViewController.swift in Sources */,
 				03D35D8C1A32626800BD0546 /* WalkedTodayMeterView.swift in Sources */,
 				032AAF6D1A36DE8B0079A659 /* CreateChallengeTableViewController.swift in Sources */,
+				03DF72D71A3E782D0056E7F6 /* FTUser.swift in Sources */,
 				B02560A61A2E54080047E563 /* SettingsTableViewController.swift in Sources */,
 				039CDAE11A1EDA1D00B05871 /* RootTabBarViewController.swift in Sources */,
 				032AAF6E1A36DE8B0079A659 /* TeamsToChallengeTableViewController.swift in Sources */,
