@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate{
     
 // MARK: TABLE VIEW TEST DATA
     var team : NSArray = [["image" : "default-profile.png", "name" : "Alex", "steps" : 9385], ["image" : "default-profile.png", "name" : "Josh", "steps" : 2844], ["image" : "default-profile.png", "name" : "Danny", "steps" : 7612], ["image" : "default-profile.png", "name" : "Dale", "steps" : 9385], ["image" : "default-profile.png", "name" : "Tyten", "steps" : 9385], ["image" : "default-profile.png", "name" : "Amanda", "steps" : 8201], ["image" : "default-profile.png", "name" : "George", "steps" : 6745], ["image" : "default-profile.png", "name" : "Brittany", "steps" : 7331], ["image" : "default-profile.png", "name" : "CJ", "steps" : 3038], ["image" : "default-profile.png", "name" : "Ty", "steps" : 2009], ["image" : "default-profile.png", "name" : "Cate", "steps" : 3011] ]
@@ -77,7 +77,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         teamTableView.reloadData()
         
     }
-
+    
 
     /*
     // MARK: - Navigation

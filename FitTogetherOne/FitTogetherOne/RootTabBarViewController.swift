@@ -29,7 +29,14 @@ class RootTabBarViewController: UITabBarController {
         
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
-
+    
+    @IBAction func presentPendingChallange(sender: AnyObject) {
+        let pendingChallangeViewController = storyboard?.instantiateViewControllerWithIdentifier("pendingChallange") as PendingChallangeTableViewController
+        
+        self.navigationController?.pushViewController(pendingChallangeViewController, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
