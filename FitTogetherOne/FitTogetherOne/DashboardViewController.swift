@@ -15,6 +15,10 @@ class DashboardViewController: UITableViewController {
     @IBOutlet weak var dashboardTable: UITableView!
     @IBOutlet weak var walkedTodayMeterView: WalkedTodayMeterView!
     @IBOutlet weak var stepsWalkedToday: UILabel!
+    @IBOutlet weak var competitionProgress: UIProgressView!
+    @IBOutlet weak var daysCompletedLabel: UILabel!
+    @IBOutlet weak var totalDaysLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
 
     
     override func viewDidLoad() {
@@ -42,7 +46,16 @@ class DashboardViewController: UITableViewController {
             println("Requested access to users step count")
         }
         
+        //set up the competition progress bar
+        let competitionLength = 25 as NSNumber
+        var daysCompleted = 22 as NSNumber
         
+        totalDaysLabel.text = competitionLength.stringValue
+        daysCompletedLabel.text = daysCompleted.stringValue
+        
+        progressBar.progress = daysCompleted.floatValue / competitionLength.floatValue
+        
+        progressBar.layer.cornerRadius = 12.5
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,7 +85,7 @@ class DashboardViewController: UITableViewController {
 //        shadow.lineWidth = 40.0
         
         // Make a rect to draw our shape in
-        let meterRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.85)), (screenSize.width * 0.7), (screenSize.height * 0.7))
+        let meterRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)), ((screenSize.width)-(screenSize.width * 0.95)), (screenSize.width * 0.7), (screenSize.height * 0.7))
 //        let outlineRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85) - 1.0), ((screenSize.width)-(screenSize.width * 0.85) - 1.0), (screenSize.width * 0.7) + 2.0, (screenSize.height * 0.7) + 2.0)
 //        let shadowRect = CGRectMake(((screenSize.width)-(screenSize.width * 0.85)) + 6, ((screenSize.width)-(screenSize.width * 0.85)) + 3, (screenSize.width * 0.7), (screenSize.width * 0.7))
         
@@ -89,7 +102,7 @@ class DashboardViewController: UITableViewController {
         walkedTodayMeterView.layer.addSublayer(meter)
         
         // Inner arc
-        let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.0))
+        let arcCenterPoint : CGPoint = CGPoint(x: (screenSize.width / 2.0), y: (screenSize.width / 2.5))
         let arcRadius : CGFloat = (meterRect.width / 2.0)
         let startAngle : CGFloat = CGFloat((3 * M_PI) / 2.0)
         let endAngle : CGFloat = CGFloat(M_PI)
